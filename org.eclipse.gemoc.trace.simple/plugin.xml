@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated simple -->
+      <package
+            uri="http://www.example.org/simple"
+            class="org.eclipse.gemoc.trace.simple.SimplePackage"
+            genModel="model/simple.genmodel"/>
+   </extension>
+
+</plugin>

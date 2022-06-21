@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.gemoc.gemoc_language_workbench.engine_addon">
+      <addon
+            class="org.eclipse.gemoc.trace.simple.addon.SimpleTraceAddon"
+            id="org.eclipse.gemoc.trace.simple.addon.SimpleTraceAddon"
+            name="SimpleTraceAddon">
+         <addon_booleanOption
+               defaultValue="false"
+               id="org.eclipse.gemoc.trace.simple.addon.saveTraceOnStep"
+               name="saveTraceOnStep">
+         </addon_booleanOption>
+         <addon_booleanOption
+               defaultValue="true"
+               id="org.eclipse.gemoc.trace.simple.addon.saveTraceOnEngineStop"
+               name="saveTraceOnEngineStop">
+         </addon_booleanOption>
+      </addon>
+   </extension>
+
+</plugin>

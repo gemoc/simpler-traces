@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/org.eclipse.gemoc.trace.simple/src-gen" creationIcons="false"
+    editDirectory="/org.eclipse.gemoc.trace.simple.edit/src-gen" editorDirectory="/org.eclipse.gemoc.trace.simple.editor/src-gen"
+    modelPluginID="org.eclipse.gemoc.trace.simple" modelName="Simple" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0"
+    copyrightFields="false" usedGenPackages="../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>simple.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="Simple" basePackage="org.eclipse.gemoc.trace" disposableProviderFactory="true"
+      ecorePackage="simple.ecore#/">
+    <genClasses ecoreClass="simple.ecore#//SimpleTrace">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference simple.ecore#//SimpleTrace/states"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference simple.ecore#//SimpleTrace/rootSteps"/>
+    </genClasses>
+    <genClasses ecoreClass="simple.ecore#//RuntimeState">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference simple.ecore#//RuntimeState/runtimeExtensions"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference simple.ecore#//RuntimeState/startingSteps"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference simple.ecore#//RuntimeState/endingSteps"/>
+    </genClasses>
+    <genClasses ecoreClass="simple.ecore#//RuntimeStep">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference simple.ecore#//RuntimeStep/subSteps"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference simple.ecore#//RuntimeStep/sourceState"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference simple.ecore#//RuntimeStep/targetState"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute simple.ecore#//RuntimeStep/semanticRuleName"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference simple.ecore#//RuntimeStep/semanticRuleTarget"/>
+    </genClasses>
+    <genClasses ecoreClass="simple.ecore#//RuntimeValue">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference simple.ecore#//RuntimeValue/feature"/>
+    </genClasses>
+    <genClasses ecoreClass="simple.ecore#//RuntimeIntegerValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute simple.ecore#//RuntimeIntegerValue/value"/>
+    </genClasses>
+    <genClasses ecoreClass="simple.ecore#//RuntimeReferenceValue">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference simple.ecore#//RuntimeReferenceValue/referencedObject"/>
+    </genClasses>
+    <genClasses ecoreClass="simple.ecore#//RuntimeBooleanValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute simple.ecore#//RuntimeBooleanValue/value"/>
+    </genClasses>
+    <genClasses ecoreClass="simple.ecore#//RuntimeStringValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute simple.ecore#//RuntimeStringValue/value"/>
+    </genClasses>
+    <genClasses ecoreClass="simple.ecore#//RuntimeExtension">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference simple.ecore#//RuntimeExtension/runtimeValues"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference simple.ecore#//RuntimeExtension/extendedStaticElement"/>
+    </genClasses>
+    <genClasses ecoreClass="simple.ecore#//RuntimeContainmentValue">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference simple.ecore#//RuntimeContainmentValue/runtimeObject"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
