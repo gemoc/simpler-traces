@@ -2,3 +2,12 @@
 
 A first attempt at execution traces that are _not_ multidimensional.
 
+This repository includes:
+
+- A self-contained Ecore trace metamdoel (no dependencies on GEMOC Studio internal types),
+- A GEMOC Execution Addon able to create execution traces conforming to this metamodel.
+
+== Simple trace metamodel
+
+image::metamodel.png[]
+
