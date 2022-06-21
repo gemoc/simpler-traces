@@ -1,0 +1,4 @@
+= Simpler traces for the GEMOC Studio
+
+A first attempt at execution traces that are _not_ multidimensional.
+
