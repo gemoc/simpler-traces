@@ -78,7 +78,7 @@ class SimpleTraceConstructor {
 
 		if (!mutableFields.empty) {
 
-			val runtimeExtension = factory.createRuntimeExtension
+			val runtimeExtension = factory.createRuntimeObjectExtension
 			runtimeExtension.extendedStaticElement = object
 
 			for (field : mutableFields) {
@@ -120,12 +120,8 @@ class SimpleTraceConstructor {
 						// Browse all copied objects, and add them as RuntimeObjects (or update existing RuntimeObjects)
 						for (exeObject : copier.keySet()) {
 							val copiedObject = copier.get(exeObject)
-							if (!exe2trace.containsKey(exeObject)) {
-								val traceObject = factory.createRuntimeObject
-								exe2trace.put(exeObject, traceObject)
-								this.traceRoot.runtimeObjects.add(traceObject)
-							}
-							val traceObject = exe2trace.get(exeObject)
+
+							val traceObject = createOrGetRuntimeObjectOf(exeObject)
 							val version = factory.createRuntimeObjectVersion
 							version.runtimeState = state
 							version.value = copiedObject
@@ -143,8 +139,10 @@ class SimpleTraceConstructor {
 						throw new RuntimeException("Not managed")
 					}
 				}
-				runtimeValue.feature = field.mutableProperty
-				runtimeExtension.runtimeValues.add(runtimeValue)
+				val binding = factory.createRuntimeObjectValueBinding
+				binding.feature = field.mutableProperty
+				binding.runtimeValue = runtimeValue
+				runtimeExtension.runtimeValues.add(binding)
 				lastState.runtimeExtensions.add(runtimeExtension)
 			}
 
@@ -164,6 +162,11 @@ class SimpleTraceConstructor {
 		val newStep = factory.createRuntimeStep
 		newStep.semanticRuleName = step.mseoccurrence.mse.name
 		newStep.semanticRuleTarget = step.mseoccurrence.mse.caller
+
+		for (param : step.mseoccurrence.parameters) {
+			newStep.semanticRuleParameters.add(javaObjectToRuntimeValue(param))
+		}
+
 		lastState.startingSteps.add(newStep)
 		if (!context.isEmpty() && context.getFirst() !== null) {
 			context.getFirst().getSubSteps().add(newStep)
@@ -175,7 +178,47 @@ class SimpleTraceConstructor {
 
 	def void endStep(Step<?> step) {
 		var RuntimeStep popped = context.pop()
+		if (!step.mseoccurrence.result.isEmpty) {
+			popped.semanticRuleResult = javaObjectToRuntimeValue(step.mseoccurrence.result.get(0))
+		}
 		if(popped !== null) popped.targetState = (lastState)
+	}
+
+	private def RuntimeValue javaObjectToRuntimeValue(Object object) {
+		return if (object === null) {
+			(factory.createRuntimeNullValue)
+		} else if (object instanceof EObject) {
+			val reference = factory.createRuntimeReferenceValue
+			reference.referencedObject = if (SimpleDynamicAnnotationHelper.isDynamic(object.eClass)) {
+				createOrGetRuntimeObjectOf(object)
+			} else {
+				object
+			}
+			reference
+		} else if (object instanceof Integer) {
+			val reference = factory.createRuntimeIntegerValue
+			reference.value = object
+			reference
+		} else if (object instanceof Boolean) {
+			val reference = factory.createRuntimeBooleanValue
+			reference.value = object
+			reference
+		} else if (object instanceof String) {
+			val reference = factory.createRuntimeStringValue
+			reference.value = object
+			reference
+		} else {
+			throw new Exception("Cannot store this value in the simple trace: " + object)
+		}
+	}
+
+	def RuntimeObject createOrGetRuntimeObjectOf(EObject exeObject) {
+		if (!exe2trace.containsKey(exeObject)) {
+			val traceObject = factory.createRuntimeObject
+			exe2trace.put(exeObject, traceObject)
+			this.traceRoot.runtimeObjects.add(traceObject)
+		}
+		return exe2trace.get(exeObject)
 	}
 
 	def EObject initTrace() {

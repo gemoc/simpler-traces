@@ -27,10 +27,10 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference simple.ecore#//RuntimeStep/targetState"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute simple.ecore#//RuntimeStep/semanticRuleName"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference simple.ecore#//RuntimeStep/semanticRuleTarget"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference simple.ecore#//RuntimeStep/semanticRuleParameters"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference simple.ecore#//RuntimeStep/semanticRuleResult"/>
     </genClasses>
-    <genClasses ecoreClass="simple.ecore#//RuntimeValue">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference simple.ecore#//RuntimeValue/feature"/>
-    </genClasses>
+    <genClasses ecoreClass="simple.ecore#//RuntimeValue"/>
     <genClasses ecoreClass="simple.ecore#//RuntimeIntegerValue">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute simple.ecore#//RuntimeIntegerValue/value"/>
     </genClasses>
@@ -43,9 +43,9 @@
     <genClasses ecoreClass="simple.ecore#//RuntimeStringValue">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute simple.ecore#//RuntimeStringValue/value"/>
     </genClasses>
-    <genClasses ecoreClass="simple.ecore#//RuntimeExtension">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference simple.ecore#//RuntimeExtension/runtimeValues"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference simple.ecore#//RuntimeExtension/extendedStaticElement"/>
+    <genClasses ecoreClass="simple.ecore#//RuntimeObjectExtension">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference simple.ecore#//RuntimeObjectExtension/extendedStaticElement"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference simple.ecore#//RuntimeObjectExtension/runtimeValues"/>
     </genClasses>
     <genClasses ecoreClass="simple.ecore#//RuntimeContainmentValue">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference simple.ecore#//RuntimeContainmentValue/runtimeObject"/>
@@ -56,6 +56,11 @@
     <genClasses ecoreClass="simple.ecore#//RuntimeObjectVersion">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference simple.ecore#//RuntimeObjectVersion/runtimeState"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference simple.ecore#//RuntimeObjectVersion/value"/>
+    </genClasses>
+    <genClasses ecoreClass="simple.ecore#//RuntimeNullValue"/>
+    <genClasses ecoreClass="simple.ecore#//RuntimeObjectValueBinding">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference simple.ecore#//RuntimeObjectValueBinding/feature"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference simple.ecore#//RuntimeObjectValueBinding/runtimeValue"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

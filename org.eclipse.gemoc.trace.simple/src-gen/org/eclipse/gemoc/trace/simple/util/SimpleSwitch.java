@@ -130,9 +130,9 @@ public class SimpleSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case SimplePackage.RUNTIME_EXTENSION: {
-			RuntimeExtension runtimeExtension = (RuntimeExtension) theEObject;
-			T result = caseRuntimeExtension(runtimeExtension);
+		case SimplePackage.RUNTIME_OBJECT_EXTENSION: {
+			RuntimeObjectExtension runtimeObjectExtension = (RuntimeObjectExtension) theEObject;
+			T result = caseRuntimeObjectExtension(runtimeObjectExtension);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -156,6 +156,22 @@ public class SimpleSwitch<T> extends Switch<T> {
 		case SimplePackage.RUNTIME_OBJECT_VERSION: {
 			RuntimeObjectVersion runtimeObjectVersion = (RuntimeObjectVersion) theEObject;
 			T result = caseRuntimeObjectVersion(runtimeObjectVersion);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case SimplePackage.RUNTIME_NULL_VALUE: {
+			RuntimeNullValue runtimeNullValue = (RuntimeNullValue) theEObject;
+			T result = caseRuntimeNullValue(runtimeNullValue);
+			if (result == null)
+				result = caseRuntimeValue(runtimeNullValue);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case SimplePackage.RUNTIME_OBJECT_VALUE_BINDING: {
+			RuntimeObjectValueBinding runtimeObjectValueBinding = (RuntimeObjectValueBinding) theEObject;
+			T result = caseRuntimeObjectValueBinding(runtimeObjectValueBinding);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -286,17 +302,17 @@ public class SimpleSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Runtime Extension</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Runtime Object Extension</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Runtime Extension</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Runtime Object Extension</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseRuntimeExtension(RuntimeExtension object) {
+	public T caseRuntimeObjectExtension(RuntimeObjectExtension object) {
 		return null;
 	}
 
@@ -342,6 +358,36 @@ public class SimpleSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseRuntimeObjectVersion(RuntimeObjectVersion object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Runtime Null Value</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Runtime Null Value</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRuntimeNullValue(RuntimeNullValue object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Runtime Object Value Binding</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Runtime Object Value Binding</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRuntimeObjectValueBinding(RuntimeObjectValueBinding object) {
 		return null;
 	}
 

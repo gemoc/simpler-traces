@@ -4,25 +4,23 @@ package org.eclipse.gemoc.trace.simple.impl;
 
 import org.eclipse.emf.ecore.EClass;
 
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.gemoc.trace.simple.RuntimeValue;
+import org.eclipse.gemoc.trace.simple.RuntimeNullValue;
 import org.eclipse.gemoc.trace.simple.SimplePackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Runtime Value</b></em>'.
+ * An implementation of the model object '<em><b>Runtime Null Value</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public abstract class RuntimeValueImpl extends MinimalEObjectImpl.Container implements RuntimeValue {
+public class RuntimeNullValueImpl extends RuntimeValueImpl implements RuntimeNullValue {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected RuntimeValueImpl() {
+	protected RuntimeNullValueImpl() {
 		super();
 	}
 
@@ -33,7 +31,7 @@ public abstract class RuntimeValueImpl extends MinimalEObjectImpl.Container impl
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return SimplePackage.Literals.RUNTIME_VALUE;
+		return SimplePackage.Literals.RUNTIME_NULL_VALUE;
 	}
 
-} //RuntimeValueImpl
+} //RuntimeNullValueImpl

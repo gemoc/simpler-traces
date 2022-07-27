@@ -17,7 +17,7 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import org.eclipse.gemoc.trace.simple.RuntimeExtension;
+import org.eclipse.gemoc.trace.simple.RuntimeObjectExtension;
 import org.eclipse.gemoc.trace.simple.RuntimeState;
 import org.eclipse.gemoc.trace.simple.RuntimeStep;
 import org.eclipse.gemoc.trace.simple.SimplePackage;
@@ -46,7 +46,7 @@ public class RuntimeStateImpl extends MinimalEObjectImpl.Container implements Ru
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<RuntimeExtension> runtimeExtensions;
+	protected EList<RuntimeObjectExtension> runtimeExtensions;
 
 	/**
 	 * The cached value of the '{@link #getStartingSteps() <em>Starting Steps</em>}' reference list.
@@ -92,9 +92,9 @@ public class RuntimeStateImpl extends MinimalEObjectImpl.Container implements Ru
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<RuntimeExtension> getRuntimeExtensions() {
+	public EList<RuntimeObjectExtension> getRuntimeExtensions() {
 		if (runtimeExtensions == null) {
-			runtimeExtensions = new EObjectContainmentEList<RuntimeExtension>(RuntimeExtension.class, this,
+			runtimeExtensions = new EObjectContainmentEList<RuntimeObjectExtension>(RuntimeObjectExtension.class, this,
 					SimplePackage.RUNTIME_STATE__RUNTIME_EXTENSIONS);
 		}
 		return runtimeExtensions;
@@ -190,7 +190,7 @@ public class RuntimeStateImpl extends MinimalEObjectImpl.Container implements Ru
 		switch (featureID) {
 		case SimplePackage.RUNTIME_STATE__RUNTIME_EXTENSIONS:
 			getRuntimeExtensions().clear();
-			getRuntimeExtensions().addAll((Collection<? extends RuntimeExtension>) newValue);
+			getRuntimeExtensions().addAll((Collection<? extends RuntimeObjectExtension>) newValue);
 			return;
 		case SimplePackage.RUNTIME_STATE__STARTING_STEPS:
 			getStartingSteps().clear();

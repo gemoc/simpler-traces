@@ -85,13 +85,13 @@ public interface SimpleFactory extends EFactory {
 	RuntimeStringValue createRuntimeStringValue();
 
 	/**
-	 * Returns a new object of class '<em>Runtime Extension</em>'.
+	 * Returns a new object of class '<em>Runtime Object Extension</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Runtime Extension</em>'.
+	 * @return a new object of class '<em>Runtime Object Extension</em>'.
 	 * @generated
 	 */
-	RuntimeExtension createRuntimeExtension();
+	RuntimeObjectExtension createRuntimeObjectExtension();
 
 	/**
 	 * Returns a new object of class '<em>Runtime Containment Value</em>'.
@@ -119,6 +119,24 @@ public interface SimpleFactory extends EFactory {
 	 * @generated
 	 */
 	RuntimeObjectVersion createRuntimeObjectVersion();
+
+	/**
+	 * Returns a new object of class '<em>Runtime Null Value</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Runtime Null Value</em>'.
+	 * @generated
+	 */
+	RuntimeNullValue createRuntimeNullValue();
+
+	/**
+	 * Returns a new object of class '<em>Runtime Object Value Binding</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Runtime Object Value Binding</em>'.
+	 * @generated
+	 */
+	RuntimeObjectValueBinding createRuntimeObjectValueBinding();
 
 	/**
 	 * Returns the package supported by this factory.

@@ -70,14 +70,18 @@ public class SimpleFactoryImpl extends EFactoryImpl implements SimpleFactory {
 			return createRuntimeBooleanValue();
 		case SimplePackage.RUNTIME_STRING_VALUE:
 			return createRuntimeStringValue();
-		case SimplePackage.RUNTIME_EXTENSION:
-			return createRuntimeExtension();
+		case SimplePackage.RUNTIME_OBJECT_EXTENSION:
+			return createRuntimeObjectExtension();
 		case SimplePackage.RUNTIME_CONTAINMENT_VALUE:
 			return createRuntimeContainmentValue();
 		case SimplePackage.RUNTIME_OBJECT:
 			return createRuntimeObject();
 		case SimplePackage.RUNTIME_OBJECT_VERSION:
 			return createRuntimeObjectVersion();
+		case SimplePackage.RUNTIME_NULL_VALUE:
+			return createRuntimeNullValue();
+		case SimplePackage.RUNTIME_OBJECT_VALUE_BINDING:
+			return createRuntimeObjectValueBinding();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -158,9 +162,9 @@ public class SimpleFactoryImpl extends EFactoryImpl implements SimpleFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RuntimeExtension createRuntimeExtension() {
-		RuntimeExtensionImpl runtimeExtension = new RuntimeExtensionImpl();
-		return runtimeExtension;
+	public RuntimeObjectExtension createRuntimeObjectExtension() {
+		RuntimeObjectExtensionImpl runtimeObjectExtension = new RuntimeObjectExtensionImpl();
+		return runtimeObjectExtension;
 	}
 
 	/**
@@ -191,6 +195,26 @@ public class SimpleFactoryImpl extends EFactoryImpl implements SimpleFactory {
 	public RuntimeObjectVersion createRuntimeObjectVersion() {
 		RuntimeObjectVersionImpl runtimeObjectVersion = new RuntimeObjectVersionImpl();
 		return runtimeObjectVersion;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RuntimeNullValue createRuntimeNullValue() {
+		RuntimeNullValueImpl runtimeNullValue = new RuntimeNullValueImpl();
+		return runtimeNullValue;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RuntimeObjectValueBinding createRuntimeObjectValueBinding() {
+		RuntimeObjectValueBindingImpl runtimeObjectValueBinding = new RuntimeObjectValueBindingImpl();
+		return runtimeObjectValueBinding;
 	}
 
 	/**

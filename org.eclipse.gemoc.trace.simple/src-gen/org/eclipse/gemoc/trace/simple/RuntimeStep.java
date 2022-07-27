@@ -20,6 +20,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.eclipse.gemoc.trace.simple.RuntimeStep#getTargetState <em>Target State</em>}</li>
  *   <li>{@link org.eclipse.gemoc.trace.simple.RuntimeStep#getSemanticRuleName <em>Semantic Rule Name</em>}</li>
  *   <li>{@link org.eclipse.gemoc.trace.simple.RuntimeStep#getSemanticRuleTarget <em>Semantic Rule Target</em>}</li>
+ *   <li>{@link org.eclipse.gemoc.trace.simple.RuntimeStep#getSemanticRuleParameters <em>Semantic Rule Parameters</em>}</li>
+ *   <li>{@link org.eclipse.gemoc.trace.simple.RuntimeStep#getSemanticRuleResult <em>Semantic Rule Result</em>}</li>
  * </ul>
  *
  * @see org.eclipse.gemoc.trace.simple.SimplePackage#getRuntimeStep()
@@ -130,5 +132,39 @@ public interface RuntimeStep extends EObject {
 	 * @generated
 	 */
 	void setSemanticRuleTarget(EObject value);
+
+	/**
+	 * Returns the value of the '<em><b>Semantic Rule Parameters</b></em>' containment reference list.
+	 * The list contents are of type {@link org.eclipse.gemoc.trace.simple.RuntimeValue}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Semantic Rule Parameters</em>' containment reference list.
+	 * @see org.eclipse.gemoc.trace.simple.SimplePackage#getRuntimeStep_SemanticRuleParameters()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<RuntimeValue> getSemanticRuleParameters();
+
+	/**
+	 * Returns the value of the '<em><b>Semantic Rule Result</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Semantic Rule Result</em>' containment reference.
+	 * @see #setSemanticRuleResult(RuntimeValue)
+	 * @see org.eclipse.gemoc.trace.simple.SimplePackage#getRuntimeStep_SemanticRuleResult()
+	 * @model containment="true"
+	 * @generated
+	 */
+	RuntimeValue getSemanticRuleResult();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.gemoc.trace.simple.RuntimeStep#getSemanticRuleResult <em>Semantic Rule Result</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Semantic Rule Result</em>' containment reference.
+	 * @see #getSemanticRuleResult()
+	 * @generated
+	 */
+	void setSemanticRuleResult(RuntimeValue value);
 
 } // RuntimeStep
