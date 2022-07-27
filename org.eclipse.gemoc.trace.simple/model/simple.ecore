@@ -6,6 +6,8 @@
         upperBound="-1" eType="#//RuntimeState" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="rootSteps" lowerBound="1"
         upperBound="-1" eType="#//RuntimeStep" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="runtimeObjects" upperBound="-1"
+        eType="#//RuntimeObject" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RuntimeState">
     <eStructuralFeatures xsi:type="ecore:EReference" name="runtimeExtensions" upperBound="-1"
@@ -52,5 +54,14 @@
   <eClassifiers xsi:type="ecore:EClass" name="RuntimeContainmentValue" eSuperTypes="#//RuntimeValue">
     <eStructuralFeatures xsi:type="ecore:EReference" name="runtimeObject" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"
         containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RuntimeObject">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="versions" lowerBound="1"
+        upperBound="-1" eType="#//RuntimeObjectVersion" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RuntimeObjectVersion">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="runtimeState" lowerBound="1"
+        eType="#//RuntimeState"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
   </eClassifiers>
 </ecore:EPackage>

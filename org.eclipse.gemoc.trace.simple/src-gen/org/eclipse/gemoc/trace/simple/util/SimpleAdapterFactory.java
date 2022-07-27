@@ -117,6 +117,16 @@ public class SimpleAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseRuntimeObject(RuntimeObject object) {
+			return createRuntimeObjectAdapter();
+		}
+
+		@Override
+		public Adapter caseRuntimeObjectVersion(RuntimeObjectVersion object) {
+			return createRuntimeObjectVersionAdapter();
+		}
+
+		@Override
 		public Adapter defaultCase(EObject object) {
 			return createEObjectAdapter();
 		}
@@ -272,6 +282,34 @@ public class SimpleAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createRuntimeContainmentValueAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.gemoc.trace.simple.RuntimeObject <em>Runtime Object</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.gemoc.trace.simple.RuntimeObject
+	 * @generated
+	 */
+	public Adapter createRuntimeObjectAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.gemoc.trace.simple.RuntimeObjectVersion <em>Runtime Object Version</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.gemoc.trace.simple.RuntimeObjectVersion
+	 * @generated
+	 */
+	public Adapter createRuntimeObjectVersionAdapter() {
 		return null;
 	}
 

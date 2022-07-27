@@ -14,6 +14,7 @@
     <genClasses ecoreClass="simple.ecore#//SimpleTrace">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference simple.ecore#//SimpleTrace/states"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference simple.ecore#//SimpleTrace/rootSteps"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference simple.ecore#//SimpleTrace/runtimeObjects"/>
     </genClasses>
     <genClasses ecoreClass="simple.ecore#//RuntimeState">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference simple.ecore#//RuntimeState/runtimeExtensions"/>
@@ -48,6 +49,13 @@
     </genClasses>
     <genClasses ecoreClass="simple.ecore#//RuntimeContainmentValue">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference simple.ecore#//RuntimeContainmentValue/runtimeObject"/>
+    </genClasses>
+    <genClasses ecoreClass="simple.ecore#//RuntimeObject">
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference simple.ecore#//RuntimeObject/versions"/>
+    </genClasses>
+    <genClasses ecoreClass="simple.ecore#//RuntimeObjectVersion">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference simple.ecore#//RuntimeObjectVersion/runtimeState"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference simple.ecore#//RuntimeObjectVersion/value"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

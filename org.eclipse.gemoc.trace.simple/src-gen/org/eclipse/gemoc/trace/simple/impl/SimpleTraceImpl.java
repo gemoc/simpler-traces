@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.eclipse.gemoc.trace.simple.RuntimeObject;
 import org.eclipse.gemoc.trace.simple.RuntimeState;
 import org.eclipse.gemoc.trace.simple.RuntimeStep;
 import org.eclipse.gemoc.trace.simple.SimplePackage;
@@ -31,6 +32,7 @@ import org.eclipse.gemoc.trace.simple.SimpleTrace;
  * <ul>
  *   <li>{@link org.eclipse.gemoc.trace.simple.impl.SimpleTraceImpl#getStates <em>States</em>}</li>
  *   <li>{@link org.eclipse.gemoc.trace.simple.impl.SimpleTraceImpl#getRootSteps <em>Root Steps</em>}</li>
+ *   <li>{@link org.eclipse.gemoc.trace.simple.impl.SimpleTraceImpl#getRuntimeObjects <em>Runtime Objects</em>}</li>
  * </ul>
  *
  * @generated
@@ -55,6 +57,16 @@ public class SimpleTraceImpl extends MinimalEObjectImpl.Container implements Sim
 	 * @ordered
 	 */
 	protected EList<RuntimeStep> rootSteps;
+
+	/**
+	 * The cached value of the '{@link #getRuntimeObjects() <em>Runtime Objects</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRuntimeObjects()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<RuntimeObject> runtimeObjects;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -106,6 +118,19 @@ public class SimpleTraceImpl extends MinimalEObjectImpl.Container implements Sim
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<RuntimeObject> getRuntimeObjects() {
+		if (runtimeObjects == null) {
+			runtimeObjects = new EObjectContainmentEList<RuntimeObject>(RuntimeObject.class, this,
+					SimplePackage.SIMPLE_TRACE__RUNTIME_OBJECTS);
+		}
+		return runtimeObjects;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -113,6 +138,8 @@ public class SimpleTraceImpl extends MinimalEObjectImpl.Container implements Sim
 			return ((InternalEList<?>) getStates()).basicRemove(otherEnd, msgs);
 		case SimplePackage.SIMPLE_TRACE__ROOT_STEPS:
 			return ((InternalEList<?>) getRootSteps()).basicRemove(otherEnd, msgs);
+		case SimplePackage.SIMPLE_TRACE__RUNTIME_OBJECTS:
+			return ((InternalEList<?>) getRuntimeObjects()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -129,6 +156,8 @@ public class SimpleTraceImpl extends MinimalEObjectImpl.Container implements Sim
 			return getStates();
 		case SimplePackage.SIMPLE_TRACE__ROOT_STEPS:
 			return getRootSteps();
+		case SimplePackage.SIMPLE_TRACE__RUNTIME_OBJECTS:
+			return getRuntimeObjects();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -150,6 +179,10 @@ public class SimpleTraceImpl extends MinimalEObjectImpl.Container implements Sim
 			getRootSteps().clear();
 			getRootSteps().addAll((Collection<? extends RuntimeStep>) newValue);
 			return;
+		case SimplePackage.SIMPLE_TRACE__RUNTIME_OBJECTS:
+			getRuntimeObjects().clear();
+			getRuntimeObjects().addAll((Collection<? extends RuntimeObject>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -168,6 +201,9 @@ public class SimpleTraceImpl extends MinimalEObjectImpl.Container implements Sim
 		case SimplePackage.SIMPLE_TRACE__ROOT_STEPS:
 			getRootSteps().clear();
 			return;
+		case SimplePackage.SIMPLE_TRACE__RUNTIME_OBJECTS:
+			getRuntimeObjects().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -184,6 +220,8 @@ public class SimpleTraceImpl extends MinimalEObjectImpl.Container implements Sim
 			return states != null && !states.isEmpty();
 		case SimplePackage.SIMPLE_TRACE__ROOT_STEPS:
 			return rootSteps != null && !rootSteps.isEmpty();
+		case SimplePackage.SIMPLE_TRACE__RUNTIME_OBJECTS:
+			return runtimeObjects != null && !runtimeObjects.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

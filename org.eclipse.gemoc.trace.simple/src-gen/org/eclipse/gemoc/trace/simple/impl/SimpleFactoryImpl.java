@@ -74,6 +74,10 @@ public class SimpleFactoryImpl extends EFactoryImpl implements SimpleFactory {
 			return createRuntimeExtension();
 		case SimplePackage.RUNTIME_CONTAINMENT_VALUE:
 			return createRuntimeContainmentValue();
+		case SimplePackage.RUNTIME_OBJECT:
+			return createRuntimeObject();
+		case SimplePackage.RUNTIME_OBJECT_VERSION:
+			return createRuntimeObjectVersion();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -167,6 +171,26 @@ public class SimpleFactoryImpl extends EFactoryImpl implements SimpleFactory {
 	public RuntimeContainmentValue createRuntimeContainmentValue() {
 		RuntimeContainmentValueImpl runtimeContainmentValue = new RuntimeContainmentValueImpl();
 		return runtimeContainmentValue;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RuntimeObject createRuntimeObject() {
+		RuntimeObjectImpl runtimeObject = new RuntimeObjectImpl();
+		return runtimeObject;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RuntimeObjectVersion createRuntimeObjectVersion() {
+		RuntimeObjectVersionImpl runtimeObjectVersion = new RuntimeObjectVersionImpl();
+		return runtimeObjectVersion;
 	}
 
 	/**

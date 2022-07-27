@@ -14,6 +14,8 @@ import org.eclipse.gemoc.trace.simple.RuntimeBooleanValue;
 import org.eclipse.gemoc.trace.simple.RuntimeContainmentValue;
 import org.eclipse.gemoc.trace.simple.RuntimeExtension;
 import org.eclipse.gemoc.trace.simple.RuntimeIntegerValue;
+import org.eclipse.gemoc.trace.simple.RuntimeObject;
+import org.eclipse.gemoc.trace.simple.RuntimeObjectVersion;
 import org.eclipse.gemoc.trace.simple.RuntimeReferenceValue;
 import org.eclipse.gemoc.trace.simple.RuntimeState;
 import org.eclipse.gemoc.trace.simple.RuntimeStep;
@@ -99,6 +101,20 @@ public class SimplePackageImpl extends EPackageImpl implements SimplePackage {
 	 * @generated
 	 */
 	private EClass runtimeContainmentValueEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass runtimeObjectEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass runtimeObjectVersionEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -192,6 +208,15 @@ public class SimplePackageImpl extends EPackageImpl implements SimplePackage {
 	 */
 	public EReference getSimpleTrace_RootSteps() {
 		return (EReference) simpleTraceEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getSimpleTrace_RuntimeObjects() {
+		return (EReference) simpleTraceEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -424,6 +449,51 @@ public class SimplePackageImpl extends EPackageImpl implements SimplePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getRuntimeObject() {
+		return runtimeObjectEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getRuntimeObject_Versions() {
+		return (EReference) runtimeObjectEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getRuntimeObjectVersion() {
+		return runtimeObjectVersionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getRuntimeObjectVersion_RuntimeState() {
+		return (EReference) runtimeObjectVersionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getRuntimeObjectVersion_Value() {
+		return (EReference) runtimeObjectVersionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public SimpleFactory getSimpleFactory() {
 		return (SimpleFactory) getEFactoryInstance();
 	}
@@ -451,6 +521,7 @@ public class SimplePackageImpl extends EPackageImpl implements SimplePackage {
 		simpleTraceEClass = createEClass(SIMPLE_TRACE);
 		createEReference(simpleTraceEClass, SIMPLE_TRACE__STATES);
 		createEReference(simpleTraceEClass, SIMPLE_TRACE__ROOT_STEPS);
+		createEReference(simpleTraceEClass, SIMPLE_TRACE__RUNTIME_OBJECTS);
 
 		runtimeStateEClass = createEClass(RUNTIME_STATE);
 		createEReference(runtimeStateEClass, RUNTIME_STATE__RUNTIME_EXTENSIONS);
@@ -485,6 +556,13 @@ public class SimplePackageImpl extends EPackageImpl implements SimplePackage {
 
 		runtimeContainmentValueEClass = createEClass(RUNTIME_CONTAINMENT_VALUE);
 		createEReference(runtimeContainmentValueEClass, RUNTIME_CONTAINMENT_VALUE__RUNTIME_OBJECT);
+
+		runtimeObjectEClass = createEClass(RUNTIME_OBJECT);
+		createEReference(runtimeObjectEClass, RUNTIME_OBJECT__VERSIONS);
+
+		runtimeObjectVersionEClass = createEClass(RUNTIME_OBJECT_VERSION);
+		createEReference(runtimeObjectVersionEClass, RUNTIME_OBJECT_VERSION__RUNTIME_STATE);
+		createEReference(runtimeObjectVersionEClass, RUNTIME_OBJECT_VERSION__VALUE);
 	}
 
 	/**
@@ -532,6 +610,9 @@ public class SimplePackageImpl extends EPackageImpl implements SimplePackage {
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSimpleTrace_RootSteps(), this.getRuntimeStep(), null, "rootSteps", null, 1, -1,
+				SimpleTrace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSimpleTrace_RuntimeObjects(), this.getRuntimeObject(), null, "runtimeObjects", null, 0, -1,
 				SimpleTrace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -609,6 +690,21 @@ public class SimplePackageImpl extends EPackageImpl implements SimplePackage {
 		initEReference(getRuntimeContainmentValue_RuntimeObject(), theEcorePackage.getEObject(), null, "runtimeObject",
 				null, 0, 1, RuntimeContainmentValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
 				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(runtimeObjectEClass, RuntimeObject.class, "RuntimeObject", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getRuntimeObject_Versions(), this.getRuntimeObjectVersion(), null, "versions", null, 1, -1,
+				RuntimeObject.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(runtimeObjectVersionEClass, RuntimeObjectVersion.class, "RuntimeObjectVersion", !IS_ABSTRACT,
+				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getRuntimeObjectVersion_RuntimeState(), this.getRuntimeState(), null, "runtimeState", null, 1, 1,
+				RuntimeObjectVersion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRuntimeObjectVersion_Value(), theEcorePackage.getEObject(), null, "value", null, 1, 1,
+				RuntimeObjectVersion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

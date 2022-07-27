@@ -2,9 +2,11 @@ package org.eclipse.gemoc.trace.simple.addon
 
 import java.io.IOException
 import java.util.Deque
+import java.util.HashMap
 import java.util.HashSet
 import java.util.LinkedList
 import java.util.List
+import java.util.Map
 import java.util.Set
 import org.eclipse.emf.common.util.TreeIterator
 import org.eclipse.emf.common.util.URI
@@ -21,6 +23,7 @@ import org.eclipse.gemoc.trace.commons.model.trace.Step
 import org.eclipse.gemoc.trace.simple.RuntimeBooleanValue
 import org.eclipse.gemoc.trace.simple.RuntimeContainmentValue
 import org.eclipse.gemoc.trace.simple.RuntimeIntegerValue
+import org.eclipse.gemoc.trace.simple.RuntimeObject
 import org.eclipse.gemoc.trace.simple.RuntimeReferenceValue
 import org.eclipse.gemoc.trace.simple.RuntimeState
 import org.eclipse.gemoc.trace.simple.RuntimeStep
@@ -38,6 +41,8 @@ class SimpleTraceConstructor {
 	RuntimeState lastState
 	IDynamicPartAccessor dynamicPartAccessor = new DefaultDynamicPartAccessor
 	SimpleFactory factory = SimpleFactory.eINSTANCE
+
+	Map<EObject, RuntimeObject> exe2trace = new HashMap
 
 	new(Resource executedModel, Resource traceResource) {
 		this.executedModel = executedModel
@@ -108,7 +113,25 @@ class SimpleTraceConstructor {
 					// If the referenced element is a contained runtime element, we make a deep copy
 					if (mutableProperty.containment && SimpleDynamicAnnotationHelper.isDynamic(mutableProperty.EType)) {
 						runtimeValue = factory.createRuntimeContainmentValue;
-						(runtimeValue as RuntimeContainmentValue).runtimeObject = EcoreUtil.copy(referencedElement)
+						val EcoreUtil.Copier copier = new EcoreUtil.Copier();
+						(runtimeValue as RuntimeContainmentValue).runtimeObject = copier.copy(referencedElement)
+						copier.copyReferences()
+
+						// Browse all copied objects, and add them as RuntimeObjects (or update existing RuntimeObjects)
+						for (exeObject : copier.keySet()) {
+							val copiedObject = copier.get(exeObject)
+							if (!exe2trace.containsKey(exeObject)) {
+								val traceObject = factory.createRuntimeObject
+								exe2trace.put(exeObject, traceObject)
+								this.traceRoot.runtimeObjects.add(traceObject)
+							}
+							val traceObject = exe2trace.get(exeObject)
+							val version = factory.createRuntimeObjectVersion
+							version.runtimeState = state
+							version.value = copiedObject
+							traceObject.versions.add(version)
+						}
+
 					} // If the referenced element is a referenced static element, we copy the reference
 					else if (!mutableProperty.containment &&
 						!SimpleDynamicAnnotationHelper.isDynamic(mutableProperty.EType)) {

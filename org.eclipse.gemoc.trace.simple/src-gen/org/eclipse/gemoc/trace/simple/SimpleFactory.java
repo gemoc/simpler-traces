@@ -103,6 +103,24 @@ public interface SimpleFactory extends EFactory {
 	RuntimeContainmentValue createRuntimeContainmentValue();
 
 	/**
+	 * Returns a new object of class '<em>Runtime Object</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Runtime Object</em>'.
+	 * @generated
+	 */
+	RuntimeObject createRuntimeObject();
+
+	/**
+	 * Returns a new object of class '<em>Runtime Object Version</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Runtime Object Version</em>'.
+	 * @generated
+	 */
+	RuntimeObjectVersion createRuntimeObjectVersion();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

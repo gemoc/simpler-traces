@@ -146,6 +146,20 @@ public class SimpleSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
+		case SimplePackage.RUNTIME_OBJECT: {
+			RuntimeObject runtimeObject = (RuntimeObject) theEObject;
+			T result = caseRuntimeObject(runtimeObject);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case SimplePackage.RUNTIME_OBJECT_VERSION: {
+			RuntimeObjectVersion runtimeObjectVersion = (RuntimeObjectVersion) theEObject;
+			T result = caseRuntimeObjectVersion(runtimeObjectVersion);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
 		default:
 			return defaultCase(theEObject);
 		}
@@ -298,6 +312,36 @@ public class SimpleSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseRuntimeContainmentValue(RuntimeContainmentValue object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Runtime Object</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Runtime Object</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRuntimeObject(RuntimeObject object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Runtime Object Version</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Runtime Object Version</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRuntimeObjectVersion(RuntimeObjectVersion object) {
 		return null;
 	}
 
