@@ -1,10 +1,10 @@
 = Simpler traces for the GEMOC Studio
 
-A first attempt at execution traces that are _not_ multidimensional.
+A first attempt at execution traces that are _not_ multidimensional — except for the fact that we store all versions of each runtime-only element throughout the trace.
 
 This repository includes:
 
-- A self-contained Ecore trace metamdoel (no dependencies on GEMOC Studio internal types),
+- A self-contained Ecore trace metamodel (no dependencies on GEMOC Studio internal types),
 - A GEMOC Execution Addon able to create execution traces conforming to this metamodel.
 
 == Simple trace metamodel
