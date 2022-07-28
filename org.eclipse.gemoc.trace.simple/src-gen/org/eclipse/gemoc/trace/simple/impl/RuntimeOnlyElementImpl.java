@@ -16,24 +16,24 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import org.eclipse.gemoc.trace.simple.RuntimeObject;
-import org.eclipse.gemoc.trace.simple.RuntimeObjectVersion;
+import org.eclipse.gemoc.trace.simple.RuntimeOnlyElement;
+import org.eclipse.gemoc.trace.simple.RuntimeOnlyElementVersion;
 import org.eclipse.gemoc.trace.simple.SimplePackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Runtime Object</b></em>'.
+ * An implementation of the model object '<em><b>Runtime Only Element</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.eclipse.gemoc.trace.simple.impl.RuntimeObjectImpl#getVersions <em>Versions</em>}</li>
+ *   <li>{@link org.eclipse.gemoc.trace.simple.impl.RuntimeOnlyElementImpl#getVersions <em>Versions</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class RuntimeObjectImpl extends MinimalEObjectImpl.Container implements RuntimeObject {
+public class RuntimeOnlyElementImpl extends MinimalEObjectImpl.Container implements RuntimeOnlyElement {
 	/**
 	 * The cached value of the '{@link #getVersions() <em>Versions</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -42,14 +42,14 @@ public class RuntimeObjectImpl extends MinimalEObjectImpl.Container implements R
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<RuntimeObjectVersion> versions;
+	protected EList<RuntimeOnlyElementVersion> versions;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected RuntimeObjectImpl() {
+	protected RuntimeOnlyElementImpl() {
 		super();
 	}
 
@@ -60,7 +60,7 @@ public class RuntimeObjectImpl extends MinimalEObjectImpl.Container implements R
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return SimplePackage.Literals.RUNTIME_OBJECT;
+		return SimplePackage.Literals.RUNTIME_ONLY_ELEMENT;
 	}
 
 	/**
@@ -68,10 +68,10 @@ public class RuntimeObjectImpl extends MinimalEObjectImpl.Container implements R
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<RuntimeObjectVersion> getVersions() {
+	public EList<RuntimeOnlyElementVersion> getVersions() {
 		if (versions == null) {
-			versions = new EObjectContainmentEList<RuntimeObjectVersion>(RuntimeObjectVersion.class, this,
-					SimplePackage.RUNTIME_OBJECT__VERSIONS);
+			versions = new EObjectContainmentEList<RuntimeOnlyElementVersion>(RuntimeOnlyElementVersion.class, this,
+					SimplePackage.RUNTIME_ONLY_ELEMENT__VERSIONS);
 		}
 		return versions;
 	}
@@ -84,7 +84,7 @@ public class RuntimeObjectImpl extends MinimalEObjectImpl.Container implements R
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case SimplePackage.RUNTIME_OBJECT__VERSIONS:
+		case SimplePackage.RUNTIME_ONLY_ELEMENT__VERSIONS:
 			return ((InternalEList<?>) getVersions()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -98,7 +98,7 @@ public class RuntimeObjectImpl extends MinimalEObjectImpl.Container implements R
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case SimplePackage.RUNTIME_OBJECT__VERSIONS:
+		case SimplePackage.RUNTIME_ONLY_ELEMENT__VERSIONS:
 			return getVersions();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -113,9 +113,9 @@ public class RuntimeObjectImpl extends MinimalEObjectImpl.Container implements R
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case SimplePackage.RUNTIME_OBJECT__VERSIONS:
+		case SimplePackage.RUNTIME_ONLY_ELEMENT__VERSIONS:
 			getVersions().clear();
-			getVersions().addAll((Collection<? extends RuntimeObjectVersion>) newValue);
+			getVersions().addAll((Collection<? extends RuntimeOnlyElementVersion>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -129,7 +129,7 @@ public class RuntimeObjectImpl extends MinimalEObjectImpl.Container implements R
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case SimplePackage.RUNTIME_OBJECT__VERSIONS:
+		case SimplePackage.RUNTIME_ONLY_ELEMENT__VERSIONS:
 			getVersions().clear();
 			return;
 		}
@@ -144,10 +144,10 @@ public class RuntimeObjectImpl extends MinimalEObjectImpl.Container implements R
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case SimplePackage.RUNTIME_OBJECT__VERSIONS:
+		case SimplePackage.RUNTIME_ONLY_ELEMENT__VERSIONS:
 			return versions != null && !versions.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //RuntimeObjectImpl
+} //RuntimeOnlyElementImpl

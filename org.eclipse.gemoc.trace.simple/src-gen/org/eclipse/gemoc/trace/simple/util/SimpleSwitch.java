@@ -130,9 +130,9 @@ public class SimpleSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case SimplePackage.RUNTIME_OBJECT_EXTENSION: {
-			RuntimeObjectExtension runtimeObjectExtension = (RuntimeObjectExtension) theEObject;
-			T result = caseRuntimeObjectExtension(runtimeObjectExtension);
+		case SimplePackage.RUNTIME_EXTENSION_OF_STATIC_ELEMENT: {
+			RuntimeExtensionOfStaticElement runtimeExtensionOfStaticElement = (RuntimeExtensionOfStaticElement) theEObject;
+			T result = caseRuntimeExtensionOfStaticElement(runtimeExtensionOfStaticElement);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -146,16 +146,16 @@ public class SimpleSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case SimplePackage.RUNTIME_OBJECT: {
-			RuntimeObject runtimeObject = (RuntimeObject) theEObject;
-			T result = caseRuntimeObject(runtimeObject);
+		case SimplePackage.RUNTIME_ONLY_ELEMENT: {
+			RuntimeOnlyElement runtimeOnlyElement = (RuntimeOnlyElement) theEObject;
+			T result = caseRuntimeOnlyElement(runtimeOnlyElement);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case SimplePackage.RUNTIME_OBJECT_VERSION: {
-			RuntimeObjectVersion runtimeObjectVersion = (RuntimeObjectVersion) theEObject;
-			T result = caseRuntimeObjectVersion(runtimeObjectVersion);
+		case SimplePackage.RUNTIME_ONLY_ELEMENT_VERSION: {
+			RuntimeOnlyElementVersion runtimeOnlyElementVersion = (RuntimeOnlyElementVersion) theEObject;
+			T result = caseRuntimeOnlyElementVersion(runtimeOnlyElementVersion);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -302,17 +302,17 @@ public class SimpleSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Runtime Object Extension</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Runtime Extension Of Static Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Runtime Object Extension</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Runtime Extension Of Static Element</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseRuntimeObjectExtension(RuntimeObjectExtension object) {
+	public T caseRuntimeExtensionOfStaticElement(RuntimeExtensionOfStaticElement object) {
 		return null;
 	}
 
@@ -332,32 +332,32 @@ public class SimpleSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Runtime Object</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Runtime Only Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Runtime Object</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Runtime Only Element</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseRuntimeObject(RuntimeObject object) {
+	public T caseRuntimeOnlyElement(RuntimeOnlyElement object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Runtime Object Version</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Runtime Only Element Version</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Runtime Object Version</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Runtime Only Element Version</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseRuntimeObjectVersion(RuntimeObjectVersion object) {
+	public T caseRuntimeOnlyElementVersion(RuntimeOnlyElementVersion object) {
 		return null;
 	}
 

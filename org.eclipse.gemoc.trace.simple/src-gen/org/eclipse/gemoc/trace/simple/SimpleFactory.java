@@ -85,13 +85,13 @@ public interface SimpleFactory extends EFactory {
 	RuntimeStringValue createRuntimeStringValue();
 
 	/**
-	 * Returns a new object of class '<em>Runtime Object Extension</em>'.
+	 * Returns a new object of class '<em>Runtime Extension Of Static Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Runtime Object Extension</em>'.
+	 * @return a new object of class '<em>Runtime Extension Of Static Element</em>'.
 	 * @generated
 	 */
-	RuntimeObjectExtension createRuntimeObjectExtension();
+	RuntimeExtensionOfStaticElement createRuntimeExtensionOfStaticElement();
 
 	/**
 	 * Returns a new object of class '<em>Runtime Containment Value</em>'.
@@ -103,22 +103,22 @@ public interface SimpleFactory extends EFactory {
 	RuntimeContainmentValue createRuntimeContainmentValue();
 
 	/**
-	 * Returns a new object of class '<em>Runtime Object</em>'.
+	 * Returns a new object of class '<em>Runtime Only Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Runtime Object</em>'.
+	 * @return a new object of class '<em>Runtime Only Element</em>'.
 	 * @generated
 	 */
-	RuntimeObject createRuntimeObject();
+	RuntimeOnlyElement createRuntimeOnlyElement();
 
 	/**
-	 * Returns a new object of class '<em>Runtime Object Version</em>'.
+	 * Returns a new object of class '<em>Runtime Only Element Version</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Runtime Object Version</em>'.
+	 * @return a new object of class '<em>Runtime Only Element Version</em>'.
 	 * @generated
 	 */
-	RuntimeObjectVersion createRuntimeObjectVersion();
+	RuntimeOnlyElementVersion createRuntimeOnlyElementVersion();
 
 	/**
 	 * Returns a new object of class '<em>Runtime Null Value</em>'.

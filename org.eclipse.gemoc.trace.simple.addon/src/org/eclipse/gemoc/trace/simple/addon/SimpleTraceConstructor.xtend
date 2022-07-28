@@ -23,7 +23,7 @@ import org.eclipse.gemoc.trace.commons.model.trace.Step
 import org.eclipse.gemoc.trace.simple.RuntimeBooleanValue
 import org.eclipse.gemoc.trace.simple.RuntimeContainmentValue
 import org.eclipse.gemoc.trace.simple.RuntimeIntegerValue
-import org.eclipse.gemoc.trace.simple.RuntimeObject
+import org.eclipse.gemoc.trace.simple.RuntimeOnlyElement
 import org.eclipse.gemoc.trace.simple.RuntimeReferenceValue
 import org.eclipse.gemoc.trace.simple.RuntimeState
 import org.eclipse.gemoc.trace.simple.RuntimeStep
@@ -42,7 +42,7 @@ class SimpleTraceConstructor {
 	IDynamicPartAccessor dynamicPartAccessor = new DefaultDynamicPartAccessor
 	SimpleFactory factory = SimpleFactory.eINSTANCE
 
-	Map<EObject, RuntimeObject> exe2trace = new HashMap
+	Map<EObject, RuntimeOnlyElement> exe2trace = new HashMap
 
 	new(Resource executedModel, Resource traceResource) {
 		this.executedModel = executedModel
@@ -78,7 +78,7 @@ class SimpleTraceConstructor {
 
 		if (!mutableFields.empty) {
 
-			val runtimeExtension = factory.createRuntimeObjectExtension
+			val runtimeExtension = factory.createRuntimeExtensionOfStaticElement
 			runtimeExtension.extendedStaticElement = object
 
 			for (field : mutableFields) {
@@ -122,9 +122,9 @@ class SimpleTraceConstructor {
 							val copiedObject = copier.get(exeObject)
 
 							val traceObject = createOrGetRuntimeObjectOf(exeObject)
-							val version = factory.createRuntimeObjectVersion
+							val version = factory.createRuntimeOnlyElementVersion
 							version.runtimeState = state
-							version.value = copiedObject
+							version.element = copiedObject
 							traceObject.versions.add(version)
 						}
 
@@ -142,7 +142,7 @@ class SimpleTraceConstructor {
 				val binding = factory.createRuntimeObjectValueBinding
 				binding.feature = field.mutableProperty
 				binding.runtimeValue = runtimeValue
-				runtimeExtension.runtimeValues.add(binding)
+				runtimeExtension.runtimeBindings.add(binding)
 				lastState.runtimeExtensions.add(runtimeExtension)
 			}
 
@@ -161,7 +161,7 @@ class SimpleTraceConstructor {
 	def void addStep(Step<?> step) {
 		val newStep = factory.createRuntimeStep
 		newStep.semanticRuleName = step.mseoccurrence.mse.name
-		newStep.semanticRuleTarget = step.mseoccurrence.mse.caller
+		newStep.semanticRuleStaticTarget = step.mseoccurrence.mse.caller
 
 		for (param : step.mseoccurrence.parameters) {
 			newStep.semanticRuleParameters.add(javaObjectToRuntimeValue(param))
@@ -212,11 +212,11 @@ class SimpleTraceConstructor {
 		}
 	}
 
-	def RuntimeObject createOrGetRuntimeObjectOf(EObject exeObject) {
+	def RuntimeOnlyElement createOrGetRuntimeObjectOf(EObject exeObject) {
 		if (!exe2trace.containsKey(exeObject)) {
-			val traceObject = factory.createRuntimeObject
+			val traceObject = factory.createRuntimeOnlyElement
 			exe2trace.put(exeObject, traceObject)
-			this.traceRoot.runtimeObjects.add(traceObject)
+			this.traceRoot.runtimeOnlyElements.add(traceObject)
 		}
 		return exe2trace.get(exeObject)
 	}

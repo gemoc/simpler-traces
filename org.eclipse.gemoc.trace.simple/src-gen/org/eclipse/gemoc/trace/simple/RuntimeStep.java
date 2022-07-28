@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.eclipse.gemoc.trace.simple.RuntimeStep#getSourceState <em>Source State</em>}</li>
  *   <li>{@link org.eclipse.gemoc.trace.simple.RuntimeStep#getTargetState <em>Target State</em>}</li>
  *   <li>{@link org.eclipse.gemoc.trace.simple.RuntimeStep#getSemanticRuleName <em>Semantic Rule Name</em>}</li>
- *   <li>{@link org.eclipse.gemoc.trace.simple.RuntimeStep#getSemanticRuleTarget <em>Semantic Rule Target</em>}</li>
+ *   <li>{@link org.eclipse.gemoc.trace.simple.RuntimeStep#getSemanticRuleStaticTarget <em>Semantic Rule Static Target</em>}</li>
  *   <li>{@link org.eclipse.gemoc.trace.simple.RuntimeStep#getSemanticRuleParameters <em>Semantic Rule Parameters</em>}</li>
  *   <li>{@link org.eclipse.gemoc.trace.simple.RuntimeStep#getSemanticRuleResult <em>Semantic Rule Result</em>}</li>
  * </ul>
@@ -112,26 +112,26 @@ public interface RuntimeStep extends EObject {
 	void setSemanticRuleName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Semantic Rule Target</b></em>' reference.
+	 * Returns the value of the '<em><b>Semantic Rule Static Target</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Semantic Rule Target</em>' reference.
-	 * @see #setSemanticRuleTarget(EObject)
-	 * @see org.eclipse.gemoc.trace.simple.SimplePackage#getRuntimeStep_SemanticRuleTarget()
+	 * @return the value of the '<em>Semantic Rule Static Target</em>' reference.
+	 * @see #setSemanticRuleStaticTarget(EObject)
+	 * @see org.eclipse.gemoc.trace.simple.SimplePackage#getRuntimeStep_SemanticRuleStaticTarget()
 	 * @model required="true"
 	 * @generated
 	 */
-	EObject getSemanticRuleTarget();
+	EObject getSemanticRuleStaticTarget();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.gemoc.trace.simple.RuntimeStep#getSemanticRuleTarget <em>Semantic Rule Target</em>}' reference.
+	 * Sets the value of the '{@link org.eclipse.gemoc.trace.simple.RuntimeStep#getSemanticRuleStaticTarget <em>Semantic Rule Static Target</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Semantic Rule Target</em>' reference.
-	 * @see #getSemanticRuleTarget()
+	 * @param value the new value of the '<em>Semantic Rule Static Target</em>' reference.
+	 * @see #getSemanticRuleStaticTarget()
 	 * @generated
 	 */
-	void setSemanticRuleTarget(EObject value);
+	void setSemanticRuleStaticTarget(EObject value);
 
 	/**
 	 * Returns the value of the '<em><b>Semantic Rule Parameters</b></em>' containment reference list.

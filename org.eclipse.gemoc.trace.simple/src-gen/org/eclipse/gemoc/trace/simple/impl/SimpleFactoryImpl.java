@@ -70,14 +70,14 @@ public class SimpleFactoryImpl extends EFactoryImpl implements SimpleFactory {
 			return createRuntimeBooleanValue();
 		case SimplePackage.RUNTIME_STRING_VALUE:
 			return createRuntimeStringValue();
-		case SimplePackage.RUNTIME_OBJECT_EXTENSION:
-			return createRuntimeObjectExtension();
+		case SimplePackage.RUNTIME_EXTENSION_OF_STATIC_ELEMENT:
+			return createRuntimeExtensionOfStaticElement();
 		case SimplePackage.RUNTIME_CONTAINMENT_VALUE:
 			return createRuntimeContainmentValue();
-		case SimplePackage.RUNTIME_OBJECT:
-			return createRuntimeObject();
-		case SimplePackage.RUNTIME_OBJECT_VERSION:
-			return createRuntimeObjectVersion();
+		case SimplePackage.RUNTIME_ONLY_ELEMENT:
+			return createRuntimeOnlyElement();
+		case SimplePackage.RUNTIME_ONLY_ELEMENT_VERSION:
+			return createRuntimeOnlyElementVersion();
 		case SimplePackage.RUNTIME_NULL_VALUE:
 			return createRuntimeNullValue();
 		case SimplePackage.RUNTIME_OBJECT_VALUE_BINDING:
@@ -162,9 +162,9 @@ public class SimpleFactoryImpl extends EFactoryImpl implements SimpleFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RuntimeObjectExtension createRuntimeObjectExtension() {
-		RuntimeObjectExtensionImpl runtimeObjectExtension = new RuntimeObjectExtensionImpl();
-		return runtimeObjectExtension;
+	public RuntimeExtensionOfStaticElement createRuntimeExtensionOfStaticElement() {
+		RuntimeExtensionOfStaticElementImpl runtimeExtensionOfStaticElement = new RuntimeExtensionOfStaticElementImpl();
+		return runtimeExtensionOfStaticElement;
 	}
 
 	/**
@@ -182,9 +182,9 @@ public class SimpleFactoryImpl extends EFactoryImpl implements SimpleFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RuntimeObject createRuntimeObject() {
-		RuntimeObjectImpl runtimeObject = new RuntimeObjectImpl();
-		return runtimeObject;
+	public RuntimeOnlyElement createRuntimeOnlyElement() {
+		RuntimeOnlyElementImpl runtimeOnlyElement = new RuntimeOnlyElementImpl();
+		return runtimeOnlyElement;
 	}
 
 	/**
@@ -192,9 +192,9 @@ public class SimpleFactoryImpl extends EFactoryImpl implements SimpleFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RuntimeObjectVersion createRuntimeObjectVersion() {
-		RuntimeObjectVersionImpl runtimeObjectVersion = new RuntimeObjectVersionImpl();
-		return runtimeObjectVersion;
+	public RuntimeOnlyElementVersion createRuntimeOnlyElementVersion() {
+		RuntimeOnlyElementVersionImpl runtimeOnlyElementVersion = new RuntimeOnlyElementVersionImpl();
+		return runtimeOnlyElementVersion;
 	}
 
 	/**

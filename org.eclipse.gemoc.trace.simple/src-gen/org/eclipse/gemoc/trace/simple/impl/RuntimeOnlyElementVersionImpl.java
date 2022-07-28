@@ -11,25 +11,25 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.gemoc.trace.simple.RuntimeObjectVersion;
+import org.eclipse.gemoc.trace.simple.RuntimeOnlyElementVersion;
 import org.eclipse.gemoc.trace.simple.RuntimeState;
 import org.eclipse.gemoc.trace.simple.SimplePackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Runtime Object Version</b></em>'.
+ * An implementation of the model object '<em><b>Runtime Only Element Version</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.eclipse.gemoc.trace.simple.impl.RuntimeObjectVersionImpl#getRuntimeState <em>Runtime State</em>}</li>
- *   <li>{@link org.eclipse.gemoc.trace.simple.impl.RuntimeObjectVersionImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link org.eclipse.gemoc.trace.simple.impl.RuntimeOnlyElementVersionImpl#getRuntimeState <em>Runtime State</em>}</li>
+ *   <li>{@link org.eclipse.gemoc.trace.simple.impl.RuntimeOnlyElementVersionImpl#getElement <em>Element</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class RuntimeObjectVersionImpl extends MinimalEObjectImpl.Container implements RuntimeObjectVersion {
+public class RuntimeOnlyElementVersionImpl extends MinimalEObjectImpl.Container implements RuntimeOnlyElementVersion {
 	/**
 	 * The cached value of the '{@link #getRuntimeState() <em>Runtime State</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -41,21 +41,21 @@ public class RuntimeObjectVersionImpl extends MinimalEObjectImpl.Container imple
 	protected RuntimeState runtimeState;
 
 	/**
-	 * The cached value of the '{@link #getValue() <em>Value</em>}' reference.
+	 * The cached value of the '{@link #getElement() <em>Element</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getValue()
+	 * @see #getElement()
 	 * @generated
 	 * @ordered
 	 */
-	protected EObject value;
+	protected EObject element;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected RuntimeObjectVersionImpl() {
+	protected RuntimeOnlyElementVersionImpl() {
 		super();
 	}
 
@@ -66,7 +66,7 @@ public class RuntimeObjectVersionImpl extends MinimalEObjectImpl.Container imple
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return SimplePackage.Literals.RUNTIME_OBJECT_VERSION;
+		return SimplePackage.Literals.RUNTIME_ONLY_ELEMENT_VERSION;
 	}
 
 	/**
@@ -81,7 +81,7 @@ public class RuntimeObjectVersionImpl extends MinimalEObjectImpl.Container imple
 			if (runtimeState != oldRuntimeState) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							SimplePackage.RUNTIME_OBJECT_VERSION__RUNTIME_STATE, oldRuntimeState, runtimeState));
+							SimplePackage.RUNTIME_ONLY_ELEMENT_VERSION__RUNTIME_STATE, oldRuntimeState, runtimeState));
 			}
 		}
 		return runtimeState;
@@ -105,8 +105,8 @@ public class RuntimeObjectVersionImpl extends MinimalEObjectImpl.Container imple
 		RuntimeState oldRuntimeState = runtimeState;
 		runtimeState = newRuntimeState;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SimplePackage.RUNTIME_OBJECT_VERSION__RUNTIME_STATE,
-					oldRuntimeState, runtimeState));
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					SimplePackage.RUNTIME_ONLY_ELEMENT_VERSION__RUNTIME_STATE, oldRuntimeState, runtimeState));
 	}
 
 	/**
@@ -114,17 +114,17 @@ public class RuntimeObjectVersionImpl extends MinimalEObjectImpl.Container imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObject getValue() {
-		if (value != null && value.eIsProxy()) {
-			InternalEObject oldValue = (InternalEObject) value;
-			value = eResolveProxy(oldValue);
-			if (value != oldValue) {
+	public EObject getElement() {
+		if (element != null && element.eIsProxy()) {
+			InternalEObject oldElement = (InternalEObject) element;
+			element = eResolveProxy(oldElement);
+			if (element != oldElement) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							SimplePackage.RUNTIME_OBJECT_VERSION__VALUE, oldValue, value));
+							SimplePackage.RUNTIME_ONLY_ELEMENT_VERSION__ELEMENT, oldElement, element));
 			}
 		}
-		return value;
+		return element;
 	}
 
 	/**
@@ -132,8 +132,8 @@ public class RuntimeObjectVersionImpl extends MinimalEObjectImpl.Container imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObject basicGetValue() {
-		return value;
+	public EObject basicGetElement() {
+		return element;
 	}
 
 	/**
@@ -141,12 +141,12 @@ public class RuntimeObjectVersionImpl extends MinimalEObjectImpl.Container imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setValue(EObject newValue) {
-		EObject oldValue = value;
-		value = newValue;
+	public void setElement(EObject newElement) {
+		EObject oldElement = element;
+		element = newElement;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SimplePackage.RUNTIME_OBJECT_VERSION__VALUE, oldValue,
-					value));
+			eNotify(new ENotificationImpl(this, Notification.SET, SimplePackage.RUNTIME_ONLY_ELEMENT_VERSION__ELEMENT,
+					oldElement, element));
 	}
 
 	/**
@@ -157,14 +157,14 @@ public class RuntimeObjectVersionImpl extends MinimalEObjectImpl.Container imple
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case SimplePackage.RUNTIME_OBJECT_VERSION__RUNTIME_STATE:
+		case SimplePackage.RUNTIME_ONLY_ELEMENT_VERSION__RUNTIME_STATE:
 			if (resolve)
 				return getRuntimeState();
 			return basicGetRuntimeState();
-		case SimplePackage.RUNTIME_OBJECT_VERSION__VALUE:
+		case SimplePackage.RUNTIME_ONLY_ELEMENT_VERSION__ELEMENT:
 			if (resolve)
-				return getValue();
-			return basicGetValue();
+				return getElement();
+			return basicGetElement();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -177,11 +177,11 @@ public class RuntimeObjectVersionImpl extends MinimalEObjectImpl.Container imple
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case SimplePackage.RUNTIME_OBJECT_VERSION__RUNTIME_STATE:
+		case SimplePackage.RUNTIME_ONLY_ELEMENT_VERSION__RUNTIME_STATE:
 			setRuntimeState((RuntimeState) newValue);
 			return;
-		case SimplePackage.RUNTIME_OBJECT_VERSION__VALUE:
-			setValue((EObject) newValue);
+		case SimplePackage.RUNTIME_ONLY_ELEMENT_VERSION__ELEMENT:
+			setElement((EObject) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -195,11 +195,11 @@ public class RuntimeObjectVersionImpl extends MinimalEObjectImpl.Container imple
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case SimplePackage.RUNTIME_OBJECT_VERSION__RUNTIME_STATE:
+		case SimplePackage.RUNTIME_ONLY_ELEMENT_VERSION__RUNTIME_STATE:
 			setRuntimeState((RuntimeState) null);
 			return;
-		case SimplePackage.RUNTIME_OBJECT_VERSION__VALUE:
-			setValue((EObject) null);
+		case SimplePackage.RUNTIME_ONLY_ELEMENT_VERSION__ELEMENT:
+			setElement((EObject) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -213,12 +213,12 @@ public class RuntimeObjectVersionImpl extends MinimalEObjectImpl.Container imple
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case SimplePackage.RUNTIME_OBJECT_VERSION__RUNTIME_STATE:
+		case SimplePackage.RUNTIME_ONLY_ELEMENT_VERSION__RUNTIME_STATE:
 			return runtimeState != null;
-		case SimplePackage.RUNTIME_OBJECT_VERSION__VALUE:
-			return value != null;
+		case SimplePackage.RUNTIME_ONLY_ELEMENT_VERSION__ELEMENT:
+			return element != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //RuntimeObjectVersionImpl
+} //RuntimeOnlyElementVersionImpl

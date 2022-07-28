@@ -27,7 +27,7 @@ import org.eclipse.emf.ecore.EObject;
 public interface RuntimeState extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Runtime Extensions</b></em>' containment reference list.
-	 * The list contents are of type {@link org.eclipse.gemoc.trace.simple.RuntimeObjectExtension}.
+	 * The list contents are of type {@link org.eclipse.gemoc.trace.simple.RuntimeExtensionOfStaticElement}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Runtime Extensions</em>' containment reference list.
@@ -35,7 +35,7 @@ public interface RuntimeState extends EObject {
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<RuntimeObjectExtension> getRuntimeExtensions();
+	EList<RuntimeExtensionOfStaticElement> getRuntimeExtensions();
 
 	/**
 	 * Returns the value of the '<em><b>Starting Steps</b></em>' reference list.

@@ -107,8 +107,8 @@ public class SimpleAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseRuntimeObjectExtension(RuntimeObjectExtension object) {
-			return createRuntimeObjectExtensionAdapter();
+		public Adapter caseRuntimeExtensionOfStaticElement(RuntimeExtensionOfStaticElement object) {
+			return createRuntimeExtensionOfStaticElementAdapter();
 		}
 
 		@Override
@@ -117,13 +117,13 @@ public class SimpleAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseRuntimeObject(RuntimeObject object) {
-			return createRuntimeObjectAdapter();
+		public Adapter caseRuntimeOnlyElement(RuntimeOnlyElement object) {
+			return createRuntimeOnlyElementAdapter();
 		}
 
 		@Override
-		public Adapter caseRuntimeObjectVersion(RuntimeObjectVersion object) {
-			return createRuntimeObjectVersionAdapter();
+		public Adapter caseRuntimeOnlyElementVersion(RuntimeOnlyElementVersion object) {
+			return createRuntimeOnlyElementVersionAdapter();
 		}
 
 		@Override
@@ -268,16 +268,16 @@ public class SimpleAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.gemoc.trace.simple.RuntimeObjectExtension <em>Runtime Object Extension</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.gemoc.trace.simple.RuntimeExtensionOfStaticElement <em>Runtime Extension Of Static Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.eclipse.gemoc.trace.simple.RuntimeObjectExtension
+	 * @see org.eclipse.gemoc.trace.simple.RuntimeExtensionOfStaticElement
 	 * @generated
 	 */
-	public Adapter createRuntimeObjectExtensionAdapter() {
+	public Adapter createRuntimeExtensionOfStaticElementAdapter() {
 		return null;
 	}
 
@@ -296,30 +296,30 @@ public class SimpleAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.gemoc.trace.simple.RuntimeObject <em>Runtime Object</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.gemoc.trace.simple.RuntimeOnlyElement <em>Runtime Only Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.eclipse.gemoc.trace.simple.RuntimeObject
+	 * @see org.eclipse.gemoc.trace.simple.RuntimeOnlyElement
 	 * @generated
 	 */
-	public Adapter createRuntimeObjectAdapter() {
+	public Adapter createRuntimeOnlyElementAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.gemoc.trace.simple.RuntimeObjectVersion <em>Runtime Object Version</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.gemoc.trace.simple.RuntimeOnlyElementVersion <em>Runtime Only Element Version</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.eclipse.gemoc.trace.simple.RuntimeObjectVersion
+	 * @see org.eclipse.gemoc.trace.simple.RuntimeOnlyElementVersion
 	 * @generated
 	 */
-	public Adapter createRuntimeObjectVersionAdapter() {
+	public Adapter createRuntimeOnlyElementVersionAdapter() {
 		return null;
 	}
 

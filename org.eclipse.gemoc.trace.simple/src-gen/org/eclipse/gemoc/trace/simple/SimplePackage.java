@@ -85,13 +85,13 @@ public interface SimplePackage extends EPackage {
 	int SIMPLE_TRACE__ROOT_STEPS = 1;
 
 	/**
-	 * The feature id for the '<em><b>Runtime Objects</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Runtime Only Elements</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SIMPLE_TRACE__RUNTIME_OBJECTS = 2;
+	int SIMPLE_TRACE__RUNTIME_ONLY_ELEMENTS = 2;
 
 	/**
 	 * The number of structural features of the '<em>Trace</em>' class.
@@ -213,13 +213,13 @@ public interface SimplePackage extends EPackage {
 	int RUNTIME_STEP__SEMANTIC_RULE_NAME = 3;
 
 	/**
-	 * The feature id for the '<em><b>Semantic Rule Target</b></em>' reference.
+	 * The feature id for the '<em><b>Semantic Rule Static Target</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RUNTIME_STEP__SEMANTIC_RULE_TARGET = 4;
+	int RUNTIME_STEP__SEMANTIC_RULE_STATIC_TARGET = 4;
 
 	/**
 	 * The feature id for the '<em><b>Semantic Rule Parameters</b></em>' containment reference list.
@@ -434,14 +434,14 @@ public interface SimplePackage extends EPackage {
 	int RUNTIME_STRING_VALUE_OPERATION_COUNT = RUNTIME_VALUE_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.gemoc.trace.simple.impl.RuntimeObjectExtensionImpl <em>Runtime Object Extension</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.gemoc.trace.simple.impl.RuntimeExtensionOfStaticElementImpl <em>Runtime Extension Of Static Element</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.eclipse.gemoc.trace.simple.impl.RuntimeObjectExtensionImpl
-	 * @see org.eclipse.gemoc.trace.simple.impl.SimplePackageImpl#getRuntimeObjectExtension()
+	 * @see org.eclipse.gemoc.trace.simple.impl.RuntimeExtensionOfStaticElementImpl
+	 * @see org.eclipse.gemoc.trace.simple.impl.SimplePackageImpl#getRuntimeExtensionOfStaticElement()
 	 * @generated
 	 */
-	int RUNTIME_OBJECT_EXTENSION = 8;
+	int RUNTIME_EXTENSION_OF_STATIC_ELEMENT = 8;
 
 	/**
 	 * The feature id for the '<em><b>Extended Static Element</b></em>' reference.
@@ -450,34 +450,34 @@ public interface SimplePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RUNTIME_OBJECT_EXTENSION__EXTENDED_STATIC_ELEMENT = 0;
+	int RUNTIME_EXTENSION_OF_STATIC_ELEMENT__EXTENDED_STATIC_ELEMENT = 0;
 
 	/**
-	 * The feature id for the '<em><b>Runtime Values</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Runtime Bindings</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RUNTIME_OBJECT_EXTENSION__RUNTIME_VALUES = 1;
+	int RUNTIME_EXTENSION_OF_STATIC_ELEMENT__RUNTIME_BINDINGS = 1;
 
 	/**
-	 * The number of structural features of the '<em>Runtime Object Extension</em>' class.
+	 * The number of structural features of the '<em>Runtime Extension Of Static Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RUNTIME_OBJECT_EXTENSION_FEATURE_COUNT = 2;
+	int RUNTIME_EXTENSION_OF_STATIC_ELEMENT_FEATURE_COUNT = 2;
 
 	/**
-	 * The number of operations of the '<em>Runtime Object Extension</em>' class.
+	 * The number of operations of the '<em>Runtime Extension Of Static Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RUNTIME_OBJECT_EXTENSION_OPERATION_COUNT = 0;
+	int RUNTIME_EXTENSION_OF_STATIC_ELEMENT_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.gemoc.trace.simple.impl.RuntimeContainmentValueImpl <em>Runtime Containment Value</em>}' class.
@@ -517,14 +517,14 @@ public interface SimplePackage extends EPackage {
 	int RUNTIME_CONTAINMENT_VALUE_OPERATION_COUNT = RUNTIME_VALUE_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.gemoc.trace.simple.impl.RuntimeObjectImpl <em>Runtime Object</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.gemoc.trace.simple.impl.RuntimeOnlyElementImpl <em>Runtime Only Element</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.eclipse.gemoc.trace.simple.impl.RuntimeObjectImpl
-	 * @see org.eclipse.gemoc.trace.simple.impl.SimplePackageImpl#getRuntimeObject()
+	 * @see org.eclipse.gemoc.trace.simple.impl.RuntimeOnlyElementImpl
+	 * @see org.eclipse.gemoc.trace.simple.impl.SimplePackageImpl#getRuntimeOnlyElement()
 	 * @generated
 	 */
-	int RUNTIME_OBJECT = 10;
+	int RUNTIME_ONLY_ELEMENT = 10;
 
 	/**
 	 * The feature id for the '<em><b>Versions</b></em>' containment reference list.
@@ -533,35 +533,35 @@ public interface SimplePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RUNTIME_OBJECT__VERSIONS = 0;
+	int RUNTIME_ONLY_ELEMENT__VERSIONS = 0;
 
 	/**
-	 * The number of structural features of the '<em>Runtime Object</em>' class.
+	 * The number of structural features of the '<em>Runtime Only Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RUNTIME_OBJECT_FEATURE_COUNT = 1;
+	int RUNTIME_ONLY_ELEMENT_FEATURE_COUNT = 1;
 
 	/**
-	 * The number of operations of the '<em>Runtime Object</em>' class.
+	 * The number of operations of the '<em>Runtime Only Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RUNTIME_OBJECT_OPERATION_COUNT = 0;
+	int RUNTIME_ONLY_ELEMENT_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.gemoc.trace.simple.impl.RuntimeObjectVersionImpl <em>Runtime Object Version</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.gemoc.trace.simple.impl.RuntimeOnlyElementVersionImpl <em>Runtime Only Element Version</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.eclipse.gemoc.trace.simple.impl.RuntimeObjectVersionImpl
-	 * @see org.eclipse.gemoc.trace.simple.impl.SimplePackageImpl#getRuntimeObjectVersion()
+	 * @see org.eclipse.gemoc.trace.simple.impl.RuntimeOnlyElementVersionImpl
+	 * @see org.eclipse.gemoc.trace.simple.impl.SimplePackageImpl#getRuntimeOnlyElementVersion()
 	 * @generated
 	 */
-	int RUNTIME_OBJECT_VERSION = 11;
+	int RUNTIME_ONLY_ELEMENT_VERSION = 11;
 
 	/**
 	 * The feature id for the '<em><b>Runtime State</b></em>' reference.
@@ -570,34 +570,34 @@ public interface SimplePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RUNTIME_OBJECT_VERSION__RUNTIME_STATE = 0;
+	int RUNTIME_ONLY_ELEMENT_VERSION__RUNTIME_STATE = 0;
 
 	/**
-	 * The feature id for the '<em><b>Value</b></em>' reference.
+	 * The feature id for the '<em><b>Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RUNTIME_OBJECT_VERSION__VALUE = 1;
+	int RUNTIME_ONLY_ELEMENT_VERSION__ELEMENT = 1;
 
 	/**
-	 * The number of structural features of the '<em>Runtime Object Version</em>' class.
+	 * The number of structural features of the '<em>Runtime Only Element Version</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RUNTIME_OBJECT_VERSION_FEATURE_COUNT = 2;
+	int RUNTIME_ONLY_ELEMENT_VERSION_FEATURE_COUNT = 2;
 
 	/**
-	 * The number of operations of the '<em>Runtime Object Version</em>' class.
+	 * The number of operations of the '<em>Runtime Only Element Version</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RUNTIME_OBJECT_VERSION_OPERATION_COUNT = 0;
+	int RUNTIME_ONLY_ELEMENT_VERSION_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.gemoc.trace.simple.impl.RuntimeNullValueImpl <em>Runtime Null Value</em>}' class.
@@ -706,15 +706,15 @@ public interface SimplePackage extends EPackage {
 	EReference getSimpleTrace_RootSteps();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.eclipse.gemoc.trace.simple.SimpleTrace#getRuntimeObjects <em>Runtime Objects</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.eclipse.gemoc.trace.simple.SimpleTrace#getRuntimeOnlyElements <em>Runtime Only Elements</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Runtime Objects</em>'.
-	 * @see org.eclipse.gemoc.trace.simple.SimpleTrace#getRuntimeObjects()
+	 * @return the meta object for the containment reference list '<em>Runtime Only Elements</em>'.
+	 * @see org.eclipse.gemoc.trace.simple.SimpleTrace#getRuntimeOnlyElements()
 	 * @see #getSimpleTrace()
 	 * @generated
 	 */
-	EReference getSimpleTrace_RuntimeObjects();
+	EReference getSimpleTrace_RuntimeOnlyElements();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.gemoc.trace.simple.RuntimeState <em>Runtime State</em>}'.
@@ -814,15 +814,15 @@ public interface SimplePackage extends EPackage {
 	EAttribute getRuntimeStep_SemanticRuleName();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.eclipse.gemoc.trace.simple.RuntimeStep#getSemanticRuleTarget <em>Semantic Rule Target</em>}'.
+	 * Returns the meta object for the reference '{@link org.eclipse.gemoc.trace.simple.RuntimeStep#getSemanticRuleStaticTarget <em>Semantic Rule Static Target</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Semantic Rule Target</em>'.
-	 * @see org.eclipse.gemoc.trace.simple.RuntimeStep#getSemanticRuleTarget()
+	 * @return the meta object for the reference '<em>Semantic Rule Static Target</em>'.
+	 * @see org.eclipse.gemoc.trace.simple.RuntimeStep#getSemanticRuleStaticTarget()
 	 * @see #getRuntimeStep()
 	 * @generated
 	 */
-	EReference getRuntimeStep_SemanticRuleTarget();
+	EReference getRuntimeStep_SemanticRuleStaticTarget();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.gemoc.trace.simple.RuntimeStep#getSemanticRuleParameters <em>Semantic Rule Parameters</em>}'.
@@ -941,36 +941,36 @@ public interface SimplePackage extends EPackage {
 	EAttribute getRuntimeStringValue_Value();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.gemoc.trace.simple.RuntimeObjectExtension <em>Runtime Object Extension</em>}'.
+	 * Returns the meta object for class '{@link org.eclipse.gemoc.trace.simple.RuntimeExtensionOfStaticElement <em>Runtime Extension Of Static Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Runtime Object Extension</em>'.
-	 * @see org.eclipse.gemoc.trace.simple.RuntimeObjectExtension
+	 * @return the meta object for class '<em>Runtime Extension Of Static Element</em>'.
+	 * @see org.eclipse.gemoc.trace.simple.RuntimeExtensionOfStaticElement
 	 * @generated
 	 */
-	EClass getRuntimeObjectExtension();
+	EClass getRuntimeExtensionOfStaticElement();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.eclipse.gemoc.trace.simple.RuntimeObjectExtension#getExtendedStaticElement <em>Extended Static Element</em>}'.
+	 * Returns the meta object for the reference '{@link org.eclipse.gemoc.trace.simple.RuntimeExtensionOfStaticElement#getExtendedStaticElement <em>Extended Static Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Extended Static Element</em>'.
-	 * @see org.eclipse.gemoc.trace.simple.RuntimeObjectExtension#getExtendedStaticElement()
-	 * @see #getRuntimeObjectExtension()
+	 * @see org.eclipse.gemoc.trace.simple.RuntimeExtensionOfStaticElement#getExtendedStaticElement()
+	 * @see #getRuntimeExtensionOfStaticElement()
 	 * @generated
 	 */
-	EReference getRuntimeObjectExtension_ExtendedStaticElement();
+	EReference getRuntimeExtensionOfStaticElement_ExtendedStaticElement();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.eclipse.gemoc.trace.simple.RuntimeObjectExtension#getRuntimeValues <em>Runtime Values</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.eclipse.gemoc.trace.simple.RuntimeExtensionOfStaticElement#getRuntimeBindings <em>Runtime Bindings</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Runtime Values</em>'.
-	 * @see org.eclipse.gemoc.trace.simple.RuntimeObjectExtension#getRuntimeValues()
-	 * @see #getRuntimeObjectExtension()
+	 * @return the meta object for the containment reference list '<em>Runtime Bindings</em>'.
+	 * @see org.eclipse.gemoc.trace.simple.RuntimeExtensionOfStaticElement#getRuntimeBindings()
+	 * @see #getRuntimeExtensionOfStaticElement()
 	 * @generated
 	 */
-	EReference getRuntimeObjectExtension_RuntimeValues();
+	EReference getRuntimeExtensionOfStaticElement_RuntimeBindings();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.gemoc.trace.simple.RuntimeContainmentValue <em>Runtime Containment Value</em>}'.
@@ -994,57 +994,57 @@ public interface SimplePackage extends EPackage {
 	EReference getRuntimeContainmentValue_RuntimeObject();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.gemoc.trace.simple.RuntimeObject <em>Runtime Object</em>}'.
+	 * Returns the meta object for class '{@link org.eclipse.gemoc.trace.simple.RuntimeOnlyElement <em>Runtime Only Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Runtime Object</em>'.
-	 * @see org.eclipse.gemoc.trace.simple.RuntimeObject
+	 * @return the meta object for class '<em>Runtime Only Element</em>'.
+	 * @see org.eclipse.gemoc.trace.simple.RuntimeOnlyElement
 	 * @generated
 	 */
-	EClass getRuntimeObject();
+	EClass getRuntimeOnlyElement();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.eclipse.gemoc.trace.simple.RuntimeObject#getVersions <em>Versions</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.eclipse.gemoc.trace.simple.RuntimeOnlyElement#getVersions <em>Versions</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Versions</em>'.
-	 * @see org.eclipse.gemoc.trace.simple.RuntimeObject#getVersions()
-	 * @see #getRuntimeObject()
+	 * @see org.eclipse.gemoc.trace.simple.RuntimeOnlyElement#getVersions()
+	 * @see #getRuntimeOnlyElement()
 	 * @generated
 	 */
-	EReference getRuntimeObject_Versions();
+	EReference getRuntimeOnlyElement_Versions();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.gemoc.trace.simple.RuntimeObjectVersion <em>Runtime Object Version</em>}'.
+	 * Returns the meta object for class '{@link org.eclipse.gemoc.trace.simple.RuntimeOnlyElementVersion <em>Runtime Only Element Version</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Runtime Object Version</em>'.
-	 * @see org.eclipse.gemoc.trace.simple.RuntimeObjectVersion
+	 * @return the meta object for class '<em>Runtime Only Element Version</em>'.
+	 * @see org.eclipse.gemoc.trace.simple.RuntimeOnlyElementVersion
 	 * @generated
 	 */
-	EClass getRuntimeObjectVersion();
+	EClass getRuntimeOnlyElementVersion();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.eclipse.gemoc.trace.simple.RuntimeObjectVersion#getRuntimeState <em>Runtime State</em>}'.
+	 * Returns the meta object for the reference '{@link org.eclipse.gemoc.trace.simple.RuntimeOnlyElementVersion#getRuntimeState <em>Runtime State</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Runtime State</em>'.
-	 * @see org.eclipse.gemoc.trace.simple.RuntimeObjectVersion#getRuntimeState()
-	 * @see #getRuntimeObjectVersion()
+	 * @see org.eclipse.gemoc.trace.simple.RuntimeOnlyElementVersion#getRuntimeState()
+	 * @see #getRuntimeOnlyElementVersion()
 	 * @generated
 	 */
-	EReference getRuntimeObjectVersion_RuntimeState();
+	EReference getRuntimeOnlyElementVersion_RuntimeState();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.eclipse.gemoc.trace.simple.RuntimeObjectVersion#getValue <em>Value</em>}'.
+	 * Returns the meta object for the reference '{@link org.eclipse.gemoc.trace.simple.RuntimeOnlyElementVersion#getElement <em>Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Value</em>'.
-	 * @see org.eclipse.gemoc.trace.simple.RuntimeObjectVersion#getValue()
-	 * @see #getRuntimeObjectVersion()
+	 * @return the meta object for the reference '<em>Element</em>'.
+	 * @see org.eclipse.gemoc.trace.simple.RuntimeOnlyElementVersion#getElement()
+	 * @see #getRuntimeOnlyElementVersion()
 	 * @generated
 	 */
-	EReference getRuntimeObjectVersion_Value();
+	EReference getRuntimeOnlyElementVersion_Element();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.gemoc.trace.simple.RuntimeNullValue <em>Runtime Null Value</em>}'.
@@ -1138,12 +1138,12 @@ public interface SimplePackage extends EPackage {
 		EReference SIMPLE_TRACE__ROOT_STEPS = eINSTANCE.getSimpleTrace_RootSteps();
 
 		/**
-		 * The meta object literal for the '<em><b>Runtime Objects</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Runtime Only Elements</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference SIMPLE_TRACE__RUNTIME_OBJECTS = eINSTANCE.getSimpleTrace_RuntimeObjects();
+		EReference SIMPLE_TRACE__RUNTIME_ONLY_ELEMENTS = eINSTANCE.getSimpleTrace_RuntimeOnlyElements();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.gemoc.trace.simple.impl.RuntimeStateImpl <em>Runtime State</em>}' class.
@@ -1222,12 +1222,12 @@ public interface SimplePackage extends EPackage {
 		EAttribute RUNTIME_STEP__SEMANTIC_RULE_NAME = eINSTANCE.getRuntimeStep_SemanticRuleName();
 
 		/**
-		 * The meta object literal for the '<em><b>Semantic Rule Target</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Semantic Rule Static Target</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference RUNTIME_STEP__SEMANTIC_RULE_TARGET = eINSTANCE.getRuntimeStep_SemanticRuleTarget();
+		EReference RUNTIME_STEP__SEMANTIC_RULE_STATIC_TARGET = eINSTANCE.getRuntimeStep_SemanticRuleStaticTarget();
 
 		/**
 		 * The meta object literal for the '<em><b>Semantic Rule Parameters</b></em>' containment reference list feature.
@@ -1328,14 +1328,14 @@ public interface SimplePackage extends EPackage {
 		EAttribute RUNTIME_STRING_VALUE__VALUE = eINSTANCE.getRuntimeStringValue_Value();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.gemoc.trace.simple.impl.RuntimeObjectExtensionImpl <em>Runtime Object Extension</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.gemoc.trace.simple.impl.RuntimeExtensionOfStaticElementImpl <em>Runtime Extension Of Static Element</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.eclipse.gemoc.trace.simple.impl.RuntimeObjectExtensionImpl
-		 * @see org.eclipse.gemoc.trace.simple.impl.SimplePackageImpl#getRuntimeObjectExtension()
+		 * @see org.eclipse.gemoc.trace.simple.impl.RuntimeExtensionOfStaticElementImpl
+		 * @see org.eclipse.gemoc.trace.simple.impl.SimplePackageImpl#getRuntimeExtensionOfStaticElement()
 		 * @generated
 		 */
-		EClass RUNTIME_OBJECT_EXTENSION = eINSTANCE.getRuntimeObjectExtension();
+		EClass RUNTIME_EXTENSION_OF_STATIC_ELEMENT = eINSTANCE.getRuntimeExtensionOfStaticElement();
 
 		/**
 		 * The meta object literal for the '<em><b>Extended Static Element</b></em>' reference feature.
@@ -1343,16 +1343,17 @@ public interface SimplePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference RUNTIME_OBJECT_EXTENSION__EXTENDED_STATIC_ELEMENT = eINSTANCE
-				.getRuntimeObjectExtension_ExtendedStaticElement();
+		EReference RUNTIME_EXTENSION_OF_STATIC_ELEMENT__EXTENDED_STATIC_ELEMENT = eINSTANCE
+				.getRuntimeExtensionOfStaticElement_ExtendedStaticElement();
 
 		/**
-		 * The meta object literal for the '<em><b>Runtime Values</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Runtime Bindings</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference RUNTIME_OBJECT_EXTENSION__RUNTIME_VALUES = eINSTANCE.getRuntimeObjectExtension_RuntimeValues();
+		EReference RUNTIME_EXTENSION_OF_STATIC_ELEMENT__RUNTIME_BINDINGS = eINSTANCE
+				.getRuntimeExtensionOfStaticElement_RuntimeBindings();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.gemoc.trace.simple.impl.RuntimeContainmentValueImpl <em>Runtime Containment Value</em>}' class.
@@ -1373,14 +1374,14 @@ public interface SimplePackage extends EPackage {
 		EReference RUNTIME_CONTAINMENT_VALUE__RUNTIME_OBJECT = eINSTANCE.getRuntimeContainmentValue_RuntimeObject();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.gemoc.trace.simple.impl.RuntimeObjectImpl <em>Runtime Object</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.gemoc.trace.simple.impl.RuntimeOnlyElementImpl <em>Runtime Only Element</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.eclipse.gemoc.trace.simple.impl.RuntimeObjectImpl
-		 * @see org.eclipse.gemoc.trace.simple.impl.SimplePackageImpl#getRuntimeObject()
+		 * @see org.eclipse.gemoc.trace.simple.impl.RuntimeOnlyElementImpl
+		 * @see org.eclipse.gemoc.trace.simple.impl.SimplePackageImpl#getRuntimeOnlyElement()
 		 * @generated
 		 */
-		EClass RUNTIME_OBJECT = eINSTANCE.getRuntimeObject();
+		EClass RUNTIME_ONLY_ELEMENT = eINSTANCE.getRuntimeOnlyElement();
 
 		/**
 		 * The meta object literal for the '<em><b>Versions</b></em>' containment reference list feature.
@@ -1388,17 +1389,17 @@ public interface SimplePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference RUNTIME_OBJECT__VERSIONS = eINSTANCE.getRuntimeObject_Versions();
+		EReference RUNTIME_ONLY_ELEMENT__VERSIONS = eINSTANCE.getRuntimeOnlyElement_Versions();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.gemoc.trace.simple.impl.RuntimeObjectVersionImpl <em>Runtime Object Version</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.gemoc.trace.simple.impl.RuntimeOnlyElementVersionImpl <em>Runtime Only Element Version</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.eclipse.gemoc.trace.simple.impl.RuntimeObjectVersionImpl
-		 * @see org.eclipse.gemoc.trace.simple.impl.SimplePackageImpl#getRuntimeObjectVersion()
+		 * @see org.eclipse.gemoc.trace.simple.impl.RuntimeOnlyElementVersionImpl
+		 * @see org.eclipse.gemoc.trace.simple.impl.SimplePackageImpl#getRuntimeOnlyElementVersion()
 		 * @generated
 		 */
-		EClass RUNTIME_OBJECT_VERSION = eINSTANCE.getRuntimeObjectVersion();
+		EClass RUNTIME_ONLY_ELEMENT_VERSION = eINSTANCE.getRuntimeOnlyElementVersion();
 
 		/**
 		 * The meta object literal for the '<em><b>Runtime State</b></em>' reference feature.
@@ -1406,15 +1407,15 @@ public interface SimplePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference RUNTIME_OBJECT_VERSION__RUNTIME_STATE = eINSTANCE.getRuntimeObjectVersion_RuntimeState();
+		EReference RUNTIME_ONLY_ELEMENT_VERSION__RUNTIME_STATE = eINSTANCE.getRuntimeOnlyElementVersion_RuntimeState();
 
 		/**
-		 * The meta object literal for the '<em><b>Value</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Element</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference RUNTIME_OBJECT_VERSION__VALUE = eINSTANCE.getRuntimeObjectVersion_Value();
+		EReference RUNTIME_ONLY_ELEMENT_VERSION__ELEMENT = eINSTANCE.getRuntimeOnlyElementVersion_Element();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.gemoc.trace.simple.impl.RuntimeNullValueImpl <em>Runtime Null Value</em>}' class.
