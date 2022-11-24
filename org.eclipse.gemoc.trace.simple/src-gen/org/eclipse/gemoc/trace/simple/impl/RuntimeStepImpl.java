@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.eclipse.gemoc.trace.simple.RuntimeState;
 import org.eclipse.gemoc.trace.simple.RuntimeStep;
+import org.eclipse.gemoc.trace.simple.RuntimeValue;
 import org.eclipse.gemoc.trace.simple.SimplePackage;
 
 /**
@@ -35,7 +36,9 @@ import org.eclipse.gemoc.trace.simple.SimplePackage;
  *   <li>{@link org.eclipse.gemoc.trace.simple.impl.RuntimeStepImpl#getSourceState <em>Source State</em>}</li>
  *   <li>{@link org.eclipse.gemoc.trace.simple.impl.RuntimeStepImpl#getTargetState <em>Target State</em>}</li>
  *   <li>{@link org.eclipse.gemoc.trace.simple.impl.RuntimeStepImpl#getSemanticRuleName <em>Semantic Rule Name</em>}</li>
- *   <li>{@link org.eclipse.gemoc.trace.simple.impl.RuntimeStepImpl#getSemanticRuleTarget <em>Semantic Rule Target</em>}</li>
+ *   <li>{@link org.eclipse.gemoc.trace.simple.impl.RuntimeStepImpl#getSemanticRuleStaticTarget <em>Semantic Rule Static Target</em>}</li>
+ *   <li>{@link org.eclipse.gemoc.trace.simple.impl.RuntimeStepImpl#getSemanticRuleParameters <em>Semantic Rule Parameters</em>}</li>
+ *   <li>{@link org.eclipse.gemoc.trace.simple.impl.RuntimeStepImpl#getSemanticRuleResult <em>Semantic Rule Result</em>}</li>
  * </ul>
  *
  * @generated
@@ -92,14 +95,34 @@ public class RuntimeStepImpl extends MinimalEObjectImpl.Container implements Run
 	protected String semanticRuleName = SEMANTIC_RULE_NAME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getSemanticRuleTarget() <em>Semantic Rule Target</em>}' reference.
+	 * The cached value of the '{@link #getSemanticRuleStaticTarget() <em>Semantic Rule Static Target</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSemanticRuleTarget()
+	 * @see #getSemanticRuleStaticTarget()
 	 * @generated
 	 * @ordered
 	 */
-	protected EObject semanticRuleTarget;
+	protected EObject semanticRuleStaticTarget;
+
+	/**
+	 * The cached value of the '{@link #getSemanticRuleParameters() <em>Semantic Rule Parameters</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSemanticRuleParameters()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<RuntimeValue> semanticRuleParameters;
+
+	/**
+	 * The cached value of the '{@link #getSemanticRuleResult() <em>Semantic Rule Result</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSemanticRuleResult()
+	 * @generated
+	 * @ordered
+	 */
+	protected RuntimeValue semanticRuleResult;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -296,18 +319,18 @@ public class RuntimeStepImpl extends MinimalEObjectImpl.Container implements Run
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObject getSemanticRuleTarget() {
-		if (semanticRuleTarget != null && semanticRuleTarget.eIsProxy()) {
-			InternalEObject oldSemanticRuleTarget = (InternalEObject) semanticRuleTarget;
-			semanticRuleTarget = eResolveProxy(oldSemanticRuleTarget);
-			if (semanticRuleTarget != oldSemanticRuleTarget) {
+	public EObject getSemanticRuleStaticTarget() {
+		if (semanticRuleStaticTarget != null && semanticRuleStaticTarget.eIsProxy()) {
+			InternalEObject oldSemanticRuleStaticTarget = (InternalEObject) semanticRuleStaticTarget;
+			semanticRuleStaticTarget = eResolveProxy(oldSemanticRuleStaticTarget);
+			if (semanticRuleStaticTarget != oldSemanticRuleStaticTarget) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							SimplePackage.RUNTIME_STEP__SEMANTIC_RULE_TARGET, oldSemanticRuleTarget,
-							semanticRuleTarget));
+							SimplePackage.RUNTIME_STEP__SEMANTIC_RULE_STATIC_TARGET, oldSemanticRuleStaticTarget,
+							semanticRuleStaticTarget));
 			}
 		}
-		return semanticRuleTarget;
+		return semanticRuleStaticTarget;
 	}
 
 	/**
@@ -315,8 +338,8 @@ public class RuntimeStepImpl extends MinimalEObjectImpl.Container implements Run
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObject basicGetSemanticRuleTarget() {
-		return semanticRuleTarget;
+	public EObject basicGetSemanticRuleStaticTarget() {
+		return semanticRuleStaticTarget;
 	}
 
 	/**
@@ -324,12 +347,76 @@ public class RuntimeStepImpl extends MinimalEObjectImpl.Container implements Run
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSemanticRuleTarget(EObject newSemanticRuleTarget) {
-		EObject oldSemanticRuleTarget = semanticRuleTarget;
-		semanticRuleTarget = newSemanticRuleTarget;
+	public void setSemanticRuleStaticTarget(EObject newSemanticRuleStaticTarget) {
+		EObject oldSemanticRuleStaticTarget = semanticRuleStaticTarget;
+		semanticRuleStaticTarget = newSemanticRuleStaticTarget;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SimplePackage.RUNTIME_STEP__SEMANTIC_RULE_TARGET,
-					oldSemanticRuleTarget, semanticRuleTarget));
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					SimplePackage.RUNTIME_STEP__SEMANTIC_RULE_STATIC_TARGET, oldSemanticRuleStaticTarget,
+					semanticRuleStaticTarget));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<RuntimeValue> getSemanticRuleParameters() {
+		if (semanticRuleParameters == null) {
+			semanticRuleParameters = new EObjectContainmentEList<RuntimeValue>(RuntimeValue.class, this,
+					SimplePackage.RUNTIME_STEP__SEMANTIC_RULE_PARAMETERS);
+		}
+		return semanticRuleParameters;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RuntimeValue getSemanticRuleResult() {
+		return semanticRuleResult;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetSemanticRuleResult(RuntimeValue newSemanticRuleResult, NotificationChain msgs) {
+		RuntimeValue oldSemanticRuleResult = semanticRuleResult;
+		semanticRuleResult = newSemanticRuleResult;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					SimplePackage.RUNTIME_STEP__SEMANTIC_RULE_RESULT, oldSemanticRuleResult, newSemanticRuleResult);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSemanticRuleResult(RuntimeValue newSemanticRuleResult) {
+		if (newSemanticRuleResult != semanticRuleResult) {
+			NotificationChain msgs = null;
+			if (semanticRuleResult != null)
+				msgs = ((InternalEObject) semanticRuleResult).eInverseRemove(this,
+						EOPPOSITE_FEATURE_BASE - SimplePackage.RUNTIME_STEP__SEMANTIC_RULE_RESULT, null, msgs);
+			if (newSemanticRuleResult != null)
+				msgs = ((InternalEObject) newSemanticRuleResult).eInverseAdd(this,
+						EOPPOSITE_FEATURE_BASE - SimplePackage.RUNTIME_STEP__SEMANTIC_RULE_RESULT, null, msgs);
+			msgs = basicSetSemanticRuleResult(newSemanticRuleResult, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SimplePackage.RUNTIME_STEP__SEMANTIC_RULE_RESULT,
+					newSemanticRuleResult, newSemanticRuleResult));
 	}
 
 	/**
@@ -368,6 +455,10 @@ public class RuntimeStepImpl extends MinimalEObjectImpl.Container implements Run
 			return basicSetSourceState(null, msgs);
 		case SimplePackage.RUNTIME_STEP__TARGET_STATE:
 			return basicSetTargetState(null, msgs);
+		case SimplePackage.RUNTIME_STEP__SEMANTIC_RULE_PARAMETERS:
+			return ((InternalEList<?>) getSemanticRuleParameters()).basicRemove(otherEnd, msgs);
+		case SimplePackage.RUNTIME_STEP__SEMANTIC_RULE_RESULT:
+			return basicSetSemanticRuleResult(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -392,10 +483,14 @@ public class RuntimeStepImpl extends MinimalEObjectImpl.Container implements Run
 			return basicGetTargetState();
 		case SimplePackage.RUNTIME_STEP__SEMANTIC_RULE_NAME:
 			return getSemanticRuleName();
-		case SimplePackage.RUNTIME_STEP__SEMANTIC_RULE_TARGET:
+		case SimplePackage.RUNTIME_STEP__SEMANTIC_RULE_STATIC_TARGET:
 			if (resolve)
-				return getSemanticRuleTarget();
-			return basicGetSemanticRuleTarget();
+				return getSemanticRuleStaticTarget();
+			return basicGetSemanticRuleStaticTarget();
+		case SimplePackage.RUNTIME_STEP__SEMANTIC_RULE_PARAMETERS:
+			return getSemanticRuleParameters();
+		case SimplePackage.RUNTIME_STEP__SEMANTIC_RULE_RESULT:
+			return getSemanticRuleResult();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -422,8 +517,15 @@ public class RuntimeStepImpl extends MinimalEObjectImpl.Container implements Run
 		case SimplePackage.RUNTIME_STEP__SEMANTIC_RULE_NAME:
 			setSemanticRuleName((String) newValue);
 			return;
-		case SimplePackage.RUNTIME_STEP__SEMANTIC_RULE_TARGET:
-			setSemanticRuleTarget((EObject) newValue);
+		case SimplePackage.RUNTIME_STEP__SEMANTIC_RULE_STATIC_TARGET:
+			setSemanticRuleStaticTarget((EObject) newValue);
+			return;
+		case SimplePackage.RUNTIME_STEP__SEMANTIC_RULE_PARAMETERS:
+			getSemanticRuleParameters().clear();
+			getSemanticRuleParameters().addAll((Collection<? extends RuntimeValue>) newValue);
+			return;
+		case SimplePackage.RUNTIME_STEP__SEMANTIC_RULE_RESULT:
+			setSemanticRuleResult((RuntimeValue) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -449,8 +551,14 @@ public class RuntimeStepImpl extends MinimalEObjectImpl.Container implements Run
 		case SimplePackage.RUNTIME_STEP__SEMANTIC_RULE_NAME:
 			setSemanticRuleName(SEMANTIC_RULE_NAME_EDEFAULT);
 			return;
-		case SimplePackage.RUNTIME_STEP__SEMANTIC_RULE_TARGET:
-			setSemanticRuleTarget((EObject) null);
+		case SimplePackage.RUNTIME_STEP__SEMANTIC_RULE_STATIC_TARGET:
+			setSemanticRuleStaticTarget((EObject) null);
+			return;
+		case SimplePackage.RUNTIME_STEP__SEMANTIC_RULE_PARAMETERS:
+			getSemanticRuleParameters().clear();
+			return;
+		case SimplePackage.RUNTIME_STEP__SEMANTIC_RULE_RESULT:
+			setSemanticRuleResult((RuntimeValue) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -473,8 +581,12 @@ public class RuntimeStepImpl extends MinimalEObjectImpl.Container implements Run
 		case SimplePackage.RUNTIME_STEP__SEMANTIC_RULE_NAME:
 			return SEMANTIC_RULE_NAME_EDEFAULT == null ? semanticRuleName != null
 					: !SEMANTIC_RULE_NAME_EDEFAULT.equals(semanticRuleName);
-		case SimplePackage.RUNTIME_STEP__SEMANTIC_RULE_TARGET:
-			return semanticRuleTarget != null;
+		case SimplePackage.RUNTIME_STEP__SEMANTIC_RULE_STATIC_TARGET:
+			return semanticRuleStaticTarget != null;
+		case SimplePackage.RUNTIME_STEP__SEMANTIC_RULE_PARAMETERS:
+			return semanticRuleParameters != null && !semanticRuleParameters.isEmpty();
+		case SimplePackage.RUNTIME_STEP__SEMANTIC_RULE_RESULT:
+			return semanticRuleResult != null;
 		}
 		return super.eIsSet(featureID);
 	}

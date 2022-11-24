@@ -2,9 +2,11 @@ package org.eclipse.gemoc.trace.simple.addon
 
 import java.io.IOException
 import java.util.Deque
+import java.util.HashMap
 import java.util.HashSet
 import java.util.LinkedList
 import java.util.List
+import java.util.Map
 import java.util.Set
 import org.eclipse.emf.common.util.TreeIterator
 import org.eclipse.emf.common.util.URI
@@ -21,6 +23,7 @@ import org.eclipse.gemoc.trace.commons.model.trace.Step
 import org.eclipse.gemoc.trace.simple.RuntimeBooleanValue
 import org.eclipse.gemoc.trace.simple.RuntimeContainmentValue
 import org.eclipse.gemoc.trace.simple.RuntimeIntegerValue
+import org.eclipse.gemoc.trace.simple.RuntimeOnlyElement
 import org.eclipse.gemoc.trace.simple.RuntimeReferenceValue
 import org.eclipse.gemoc.trace.simple.RuntimeState
 import org.eclipse.gemoc.trace.simple.RuntimeStep
@@ -38,6 +41,8 @@ class SimpleTraceConstructor {
 	RuntimeState lastState
 	IDynamicPartAccessor dynamicPartAccessor = new DefaultDynamicPartAccessor
 	SimpleFactory factory = SimpleFactory.eINSTANCE
+
+	Map<EObject, RuntimeOnlyElement> exe2trace = new HashMap
 
 	new(Resource executedModel, Resource traceResource) {
 		this.executedModel = executedModel
@@ -73,7 +78,7 @@ class SimpleTraceConstructor {
 
 		if (!mutableFields.empty) {
 
-			val runtimeExtension = factory.createRuntimeExtension
+			val runtimeExtension = factory.createRuntimeExtensionOfStaticElement
 			runtimeExtension.extendedStaticElement = object
 
 			for (field : mutableFields) {
@@ -108,7 +113,21 @@ class SimpleTraceConstructor {
 					// If the referenced element is a contained runtime element, we make a deep copy
 					if (mutableProperty.containment && SimpleDynamicAnnotationHelper.isDynamic(mutableProperty.EType)) {
 						runtimeValue = factory.createRuntimeContainmentValue;
-						(runtimeValue as RuntimeContainmentValue).runtimeObject = EcoreUtil.copy(referencedElement)
+						val EcoreUtil.Copier copier = new EcoreUtil.Copier();
+						(runtimeValue as RuntimeContainmentValue).runtimeObject = copier.copy(referencedElement)
+						copier.copyReferences()
+
+						// Browse all copied objects, and add them as RuntimeObjects (or update existing RuntimeObjects)
+						for (exeObject : copier.keySet()) {
+							val copiedObject = copier.get(exeObject)
+
+							val traceObject = createOrGetRuntimeObjectOf(exeObject)
+							val version = factory.createRuntimeOnlyElementVersion
+							version.runtimeState = state
+							version.element = copiedObject
+							traceObject.versions.add(version)
+						}
+
 					} // If the referenced element is a referenced static element, we copy the reference
 					else if (!mutableProperty.containment &&
 						!SimpleDynamicAnnotationHelper.isDynamic(mutableProperty.EType)) {
@@ -120,8 +139,10 @@ class SimpleTraceConstructor {
 						throw new RuntimeException("Not managed")
 					}
 				}
-				runtimeValue.feature = field.mutableProperty
-				runtimeExtension.runtimeValues.add(runtimeValue)
+				val binding = factory.createRuntimeObjectValueBinding
+				binding.feature = field.mutableProperty
+				binding.runtimeValue = runtimeValue
+				runtimeExtension.runtimeBindings.add(binding)
 				lastState.runtimeExtensions.add(runtimeExtension)
 			}
 
@@ -140,7 +161,12 @@ class SimpleTraceConstructor {
 	def void addStep(Step<?> step) {
 		val newStep = factory.createRuntimeStep
 		newStep.semanticRuleName = step.mseoccurrence.mse.name
-		newStep.semanticRuleTarget = step.mseoccurrence.mse.caller
+		newStep.semanticRuleStaticTarget = step.mseoccurrence.mse.caller
+
+		for (param : step.mseoccurrence.parameters) {
+			newStep.semanticRuleParameters.add(javaObjectToRuntimeValue(param))
+		}
+
 		lastState.startingSteps.add(newStep)
 		if (!context.isEmpty() && context.getFirst() !== null) {
 			context.getFirst().getSubSteps().add(newStep)
@@ -152,7 +178,47 @@ class SimpleTraceConstructor {
 
 	def void endStep(Step<?> step) {
 		var RuntimeStep popped = context.pop()
+		if (!step.mseoccurrence.result.isEmpty) {
+			popped.semanticRuleResult = javaObjectToRuntimeValue(step.mseoccurrence.result.get(0))
+		}
 		if(popped !== null) popped.targetState = (lastState)
+	}
+
+	private def RuntimeValue javaObjectToRuntimeValue(Object object) {
+		return if (object === null) {
+			(factory.createRuntimeNullValue)
+		} else if (object instanceof EObject) {
+			val reference = factory.createRuntimeReferenceValue
+			reference.referencedObject = if (SimpleDynamicAnnotationHelper.isDynamic(object.eClass)) {
+				createOrGetRuntimeObjectOf(object)
+			} else {
+				object
+			}
+			reference
+		} else if (object instanceof Integer) {
+			val reference = factory.createRuntimeIntegerValue
+			reference.value = object
+			reference
+		} else if (object instanceof Boolean) {
+			val reference = factory.createRuntimeBooleanValue
+			reference.value = object
+			reference
+		} else if (object instanceof String) {
+			val reference = factory.createRuntimeStringValue
+			reference.value = object
+			reference
+		} else {
+			throw new Exception("Cannot store this value in the simple trace: " + object)
+		}
+	}
+
+	def RuntimeOnlyElement createOrGetRuntimeObjectOf(EObject exeObject) {
+		if (!exe2trace.containsKey(exeObject)) {
+			val traceObject = factory.createRuntimeOnlyElement
+			exe2trace.put(exeObject, traceObject)
+			this.traceRoot.runtimeOnlyElements.add(traceObject)
+		}
+		return exe2trace.get(exeObject)
 	}
 
 	def EObject initTrace() {

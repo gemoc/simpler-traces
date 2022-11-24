@@ -107,13 +107,33 @@ public class SimpleAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseRuntimeExtension(RuntimeExtension object) {
-			return createRuntimeExtensionAdapter();
+		public Adapter caseRuntimeExtensionOfStaticElement(RuntimeExtensionOfStaticElement object) {
+			return createRuntimeExtensionOfStaticElementAdapter();
 		}
 
 		@Override
 		public Adapter caseRuntimeContainmentValue(RuntimeContainmentValue object) {
 			return createRuntimeContainmentValueAdapter();
+		}
+
+		@Override
+		public Adapter caseRuntimeOnlyElement(RuntimeOnlyElement object) {
+			return createRuntimeOnlyElementAdapter();
+		}
+
+		@Override
+		public Adapter caseRuntimeOnlyElementVersion(RuntimeOnlyElementVersion object) {
+			return createRuntimeOnlyElementVersionAdapter();
+		}
+
+		@Override
+		public Adapter caseRuntimeNullValue(RuntimeNullValue object) {
+			return createRuntimeNullValueAdapter();
+		}
+
+		@Override
+		public Adapter caseRuntimeObjectValueBinding(RuntimeObjectValueBinding object) {
+			return createRuntimeObjectValueBindingAdapter();
 		}
 
 		@Override
@@ -248,16 +268,16 @@ public class SimpleAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.gemoc.trace.simple.RuntimeExtension <em>Runtime Extension</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.gemoc.trace.simple.RuntimeExtensionOfStaticElement <em>Runtime Extension Of Static Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.eclipse.gemoc.trace.simple.RuntimeExtension
+	 * @see org.eclipse.gemoc.trace.simple.RuntimeExtensionOfStaticElement
 	 * @generated
 	 */
-	public Adapter createRuntimeExtensionAdapter() {
+	public Adapter createRuntimeExtensionOfStaticElementAdapter() {
 		return null;
 	}
 
@@ -272,6 +292,62 @@ public class SimpleAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createRuntimeContainmentValueAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.gemoc.trace.simple.RuntimeOnlyElement <em>Runtime Only Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.gemoc.trace.simple.RuntimeOnlyElement
+	 * @generated
+	 */
+	public Adapter createRuntimeOnlyElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.gemoc.trace.simple.RuntimeOnlyElementVersion <em>Runtime Only Element Version</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.gemoc.trace.simple.RuntimeOnlyElementVersion
+	 * @generated
+	 */
+	public Adapter createRuntimeOnlyElementVersionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.gemoc.trace.simple.RuntimeNullValue <em>Runtime Null Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.gemoc.trace.simple.RuntimeNullValue
+	 * @generated
+	 */
+	public Adapter createRuntimeNullValueAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.gemoc.trace.simple.RuntimeObjectValueBinding <em>Runtime Object Value Binding</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.gemoc.trace.simple.RuntimeObjectValueBinding
+	 * @generated
+	 */
+	public Adapter createRuntimeObjectValueBindingAdapter() {
 		return null;
 	}
 

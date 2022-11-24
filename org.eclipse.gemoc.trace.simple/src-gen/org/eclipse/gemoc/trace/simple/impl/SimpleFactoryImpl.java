@@ -70,10 +70,18 @@ public class SimpleFactoryImpl extends EFactoryImpl implements SimpleFactory {
 			return createRuntimeBooleanValue();
 		case SimplePackage.RUNTIME_STRING_VALUE:
 			return createRuntimeStringValue();
-		case SimplePackage.RUNTIME_EXTENSION:
-			return createRuntimeExtension();
+		case SimplePackage.RUNTIME_EXTENSION_OF_STATIC_ELEMENT:
+			return createRuntimeExtensionOfStaticElement();
 		case SimplePackage.RUNTIME_CONTAINMENT_VALUE:
 			return createRuntimeContainmentValue();
+		case SimplePackage.RUNTIME_ONLY_ELEMENT:
+			return createRuntimeOnlyElement();
+		case SimplePackage.RUNTIME_ONLY_ELEMENT_VERSION:
+			return createRuntimeOnlyElementVersion();
+		case SimplePackage.RUNTIME_NULL_VALUE:
+			return createRuntimeNullValue();
+		case SimplePackage.RUNTIME_OBJECT_VALUE_BINDING:
+			return createRuntimeObjectValueBinding();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -154,9 +162,9 @@ public class SimpleFactoryImpl extends EFactoryImpl implements SimpleFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RuntimeExtension createRuntimeExtension() {
-		RuntimeExtensionImpl runtimeExtension = new RuntimeExtensionImpl();
-		return runtimeExtension;
+	public RuntimeExtensionOfStaticElement createRuntimeExtensionOfStaticElement() {
+		RuntimeExtensionOfStaticElementImpl runtimeExtensionOfStaticElement = new RuntimeExtensionOfStaticElementImpl();
+		return runtimeExtensionOfStaticElement;
 	}
 
 	/**
@@ -167,6 +175,46 @@ public class SimpleFactoryImpl extends EFactoryImpl implements SimpleFactory {
 	public RuntimeContainmentValue createRuntimeContainmentValue() {
 		RuntimeContainmentValueImpl runtimeContainmentValue = new RuntimeContainmentValueImpl();
 		return runtimeContainmentValue;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RuntimeOnlyElement createRuntimeOnlyElement() {
+		RuntimeOnlyElementImpl runtimeOnlyElement = new RuntimeOnlyElementImpl();
+		return runtimeOnlyElement;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RuntimeOnlyElementVersion createRuntimeOnlyElementVersion() {
+		RuntimeOnlyElementVersionImpl runtimeOnlyElementVersion = new RuntimeOnlyElementVersionImpl();
+		return runtimeOnlyElementVersion;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RuntimeNullValue createRuntimeNullValue() {
+		RuntimeNullValueImpl runtimeNullValue = new RuntimeNullValueImpl();
+		return runtimeNullValue;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RuntimeObjectValueBinding createRuntimeObjectValueBinding() {
+		RuntimeObjectValueBindingImpl runtimeObjectValueBinding = new RuntimeObjectValueBindingImpl();
+		return runtimeObjectValueBinding;
 	}
 
 	/**

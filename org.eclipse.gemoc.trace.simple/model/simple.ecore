@@ -6,10 +6,12 @@
         upperBound="-1" eType="#//RuntimeState" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="rootSteps" lowerBound="1"
         upperBound="-1" eType="#//RuntimeStep" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="runtimeOnlyElements" upperBound="-1"
+        eType="#//RuntimeOnlyElement" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RuntimeState">
     <eStructuralFeatures xsi:type="ecore:EReference" name="runtimeExtensions" upperBound="-1"
-        eType="#//RuntimeExtension" containment="true"/>
+        eType="#//RuntimeExtensionOfStaticElement" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="startingSteps" upperBound="-1"
         eType="#//RuntimeStep" eOpposite="#//RuntimeStep/sourceState"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="endingSteps" upperBound="-1"
@@ -24,13 +26,14 @@
         eOpposite="#//RuntimeState/endingSteps"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="semanticRuleName" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="semanticRuleTarget" lowerBound="1"
-        eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="semanticRuleStaticTarget"
+        lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="semanticRuleParameters"
+        upperBound="-1" eType="#//RuntimeValue" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="semanticRuleResult" eType="#//RuntimeValue"
+        containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RuntimeValue" abstract="true">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="feature" lowerBound="1"
-        eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EStructuralFeature"/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RuntimeValue" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="RuntimeIntegerValue" eSuperTypes="#//RuntimeValue">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
@@ -43,14 +46,31 @@
   <eClassifiers xsi:type="ecore:EClass" name="RuntimeStringValue" eSuperTypes="#//RuntimeValue">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RuntimeExtension">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="runtimeValues" lowerBound="1"
-        upperBound="-1" eType="#//RuntimeValue" containment="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RuntimeExtensionOfStaticElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="extendedStaticElement"
         lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="runtimeBindings" lowerBound="1"
+        upperBound="-1" eType="#//RuntimeObjectValueBinding" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RuntimeContainmentValue" eSuperTypes="#//RuntimeValue">
     <eStructuralFeatures xsi:type="ecore:EReference" name="runtimeObject" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"
         containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RuntimeOnlyElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="versions" lowerBound="1"
+        upperBound="-1" eType="#//RuntimeOnlyElementVersion" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RuntimeOnlyElementVersion">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="runtimeState" lowerBound="1"
+        eType="#//RuntimeState"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="element" lowerBound="1"
+        eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RuntimeNullValue" eSuperTypes="#//RuntimeValue"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RuntimeObjectValueBinding">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="feature" lowerBound="1"
+        eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EStructuralFeature"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="runtimeValue" lowerBound="1"
+        eType="#//RuntimeValue" containment="true"/>
   </eClassifiers>
 </ecore:EPackage>

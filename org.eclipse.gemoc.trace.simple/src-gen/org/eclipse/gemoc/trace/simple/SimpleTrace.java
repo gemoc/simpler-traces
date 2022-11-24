@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link org.eclipse.gemoc.trace.simple.SimpleTrace#getStates <em>States</em>}</li>
  *   <li>{@link org.eclipse.gemoc.trace.simple.SimpleTrace#getRootSteps <em>Root Steps</em>}</li>
+ *   <li>{@link org.eclipse.gemoc.trace.simple.SimpleTrace#getRuntimeOnlyElements <em>Runtime Only Elements</em>}</li>
  * </ul>
  *
  * @see org.eclipse.gemoc.trace.simple.SimplePackage#getSimpleTrace()
@@ -47,5 +48,17 @@ public interface SimpleTrace extends EObject {
 	 * @generated
 	 */
 	EList<RuntimeStep> getRootSteps();
+
+	/**
+	 * Returns the value of the '<em><b>Runtime Only Elements</b></em>' containment reference list.
+	 * The list contents are of type {@link org.eclipse.gemoc.trace.simple.RuntimeOnlyElement}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Runtime Only Elements</em>' containment reference list.
+	 * @see org.eclipse.gemoc.trace.simple.SimplePackage#getSimpleTrace_RuntimeOnlyElements()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<RuntimeOnlyElement> getRuntimeOnlyElements();
 
 } // SimpleTrace

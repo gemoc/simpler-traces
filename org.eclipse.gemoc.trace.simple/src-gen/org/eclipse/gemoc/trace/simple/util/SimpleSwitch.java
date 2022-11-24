@@ -130,9 +130,9 @@ public class SimpleSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case SimplePackage.RUNTIME_EXTENSION: {
-			RuntimeExtension runtimeExtension = (RuntimeExtension) theEObject;
-			T result = caseRuntimeExtension(runtimeExtension);
+		case SimplePackage.RUNTIME_EXTENSION_OF_STATIC_ELEMENT: {
+			RuntimeExtensionOfStaticElement runtimeExtensionOfStaticElement = (RuntimeExtensionOfStaticElement) theEObject;
+			T result = caseRuntimeExtensionOfStaticElement(runtimeExtensionOfStaticElement);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -142,6 +142,36 @@ public class SimpleSwitch<T> extends Switch<T> {
 			T result = caseRuntimeContainmentValue(runtimeContainmentValue);
 			if (result == null)
 				result = caseRuntimeValue(runtimeContainmentValue);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case SimplePackage.RUNTIME_ONLY_ELEMENT: {
+			RuntimeOnlyElement runtimeOnlyElement = (RuntimeOnlyElement) theEObject;
+			T result = caseRuntimeOnlyElement(runtimeOnlyElement);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case SimplePackage.RUNTIME_ONLY_ELEMENT_VERSION: {
+			RuntimeOnlyElementVersion runtimeOnlyElementVersion = (RuntimeOnlyElementVersion) theEObject;
+			T result = caseRuntimeOnlyElementVersion(runtimeOnlyElementVersion);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case SimplePackage.RUNTIME_NULL_VALUE: {
+			RuntimeNullValue runtimeNullValue = (RuntimeNullValue) theEObject;
+			T result = caseRuntimeNullValue(runtimeNullValue);
+			if (result == null)
+				result = caseRuntimeValue(runtimeNullValue);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case SimplePackage.RUNTIME_OBJECT_VALUE_BINDING: {
+			RuntimeObjectValueBinding runtimeObjectValueBinding = (RuntimeObjectValueBinding) theEObject;
+			T result = caseRuntimeObjectValueBinding(runtimeObjectValueBinding);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -272,17 +302,17 @@ public class SimpleSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Runtime Extension</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Runtime Extension Of Static Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Runtime Extension</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Runtime Extension Of Static Element</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseRuntimeExtension(RuntimeExtension object) {
+	public T caseRuntimeExtensionOfStaticElement(RuntimeExtensionOfStaticElement object) {
 		return null;
 	}
 
@@ -298,6 +328,66 @@ public class SimpleSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseRuntimeContainmentValue(RuntimeContainmentValue object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Runtime Only Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Runtime Only Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRuntimeOnlyElement(RuntimeOnlyElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Runtime Only Element Version</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Runtime Only Element Version</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRuntimeOnlyElementVersion(RuntimeOnlyElementVersion object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Runtime Null Value</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Runtime Null Value</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRuntimeNullValue(RuntimeNullValue object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Runtime Object Value Binding</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Runtime Object Value Binding</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRuntimeObjectValueBinding(RuntimeObjectValueBinding object) {
 		return null;
 	}
 

@@ -85,13 +85,13 @@ public interface SimpleFactory extends EFactory {
 	RuntimeStringValue createRuntimeStringValue();
 
 	/**
-	 * Returns a new object of class '<em>Runtime Extension</em>'.
+	 * Returns a new object of class '<em>Runtime Extension Of Static Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Runtime Extension</em>'.
+	 * @return a new object of class '<em>Runtime Extension Of Static Element</em>'.
 	 * @generated
 	 */
-	RuntimeExtension createRuntimeExtension();
+	RuntimeExtensionOfStaticElement createRuntimeExtensionOfStaticElement();
 
 	/**
 	 * Returns a new object of class '<em>Runtime Containment Value</em>'.
@@ -101,6 +101,42 @@ public interface SimpleFactory extends EFactory {
 	 * @generated
 	 */
 	RuntimeContainmentValue createRuntimeContainmentValue();
+
+	/**
+	 * Returns a new object of class '<em>Runtime Only Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Runtime Only Element</em>'.
+	 * @generated
+	 */
+	RuntimeOnlyElement createRuntimeOnlyElement();
+
+	/**
+	 * Returns a new object of class '<em>Runtime Only Element Version</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Runtime Only Element Version</em>'.
+	 * @generated
+	 */
+	RuntimeOnlyElementVersion createRuntimeOnlyElementVersion();
+
+	/**
+	 * Returns a new object of class '<em>Runtime Null Value</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Runtime Null Value</em>'.
+	 * @generated
+	 */
+	RuntimeNullValue createRuntimeNullValue();
+
+	/**
+	 * Returns a new object of class '<em>Runtime Object Value Binding</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Runtime Object Value Binding</em>'.
+	 * @generated
+	 */
+	RuntimeObjectValueBinding createRuntimeObjectValueBinding();
 
 	/**
 	 * Returns the package supported by this factory.
