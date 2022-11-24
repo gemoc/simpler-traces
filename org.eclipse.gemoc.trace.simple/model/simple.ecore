@@ -16,6 +16,7 @@
         eType="#//RuntimeStep" eOpposite="#//RuntimeStep/sourceState"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="endingSteps" upperBound="-1"
         eType="#//RuntimeStep" eOpposite="#//RuntimeStep/targetState"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="number" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RuntimeStep">
     <eStructuralFeatures xsi:type="ecore:EReference" name="subSteps" upperBound="-1"
@@ -32,6 +33,7 @@
         upperBound="-1" eType="#//RuntimeValue" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="semanticRuleResult" eType="#//RuntimeValue"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="number" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RuntimeValue" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="RuntimeIntegerValue" eSuperTypes="#//RuntimeValue">
@@ -71,6 +73,10 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="feature" lowerBound="1"
         eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EStructuralFeature"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="runtimeValue" lowerBound="1"
+        eType="#//RuntimeValue" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RuntimeCollection" eSuperTypes="#//RuntimeValue">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="contents" upperBound="-1"
         eType="#//RuntimeValue" containment="true"/>
   </eClassifiers>
 </ecore:EPackage>

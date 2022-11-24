@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.eclipse.gemoc.trace.simple.RuntimeBooleanValue;
+import org.eclipse.gemoc.trace.simple.RuntimeCollection;
 import org.eclipse.gemoc.trace.simple.RuntimeContainmentValue;
 import org.eclipse.gemoc.trace.simple.RuntimeExtensionOfStaticElement;
 import org.eclipse.gemoc.trace.simple.RuntimeIntegerValue;
@@ -131,6 +132,13 @@ public class SimplePackageImpl extends EPackageImpl implements SimplePackage {
 	 * @generated
 	 */
 	private EClass runtimeObjectValueBindingEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass runtimeCollectionEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -276,6 +284,15 @@ public class SimplePackageImpl extends EPackageImpl implements SimplePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getRuntimeState_Number() {
+		return (EAttribute) runtimeStateEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getRuntimeStep() {
 		return runtimeStepEClass;
 	}
@@ -341,6 +358,15 @@ public class SimplePackageImpl extends EPackageImpl implements SimplePackage {
 	 */
 	public EReference getRuntimeStep_SemanticRuleResult() {
 		return (EReference) runtimeStepEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getRuntimeStep_Number() {
+		return (EAttribute) runtimeStepEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -555,6 +581,24 @@ public class SimplePackageImpl extends EPackageImpl implements SimplePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getRuntimeCollection() {
+		return runtimeCollectionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getRuntimeCollection_Contents() {
+		return (EReference) runtimeCollectionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public SimpleFactory getSimpleFactory() {
 		return (SimpleFactory) getEFactoryInstance();
 	}
@@ -588,6 +632,7 @@ public class SimplePackageImpl extends EPackageImpl implements SimplePackage {
 		createEReference(runtimeStateEClass, RUNTIME_STATE__RUNTIME_EXTENSIONS);
 		createEReference(runtimeStateEClass, RUNTIME_STATE__STARTING_STEPS);
 		createEReference(runtimeStateEClass, RUNTIME_STATE__ENDING_STEPS);
+		createEAttribute(runtimeStateEClass, RUNTIME_STATE__NUMBER);
 
 		runtimeStepEClass = createEClass(RUNTIME_STEP);
 		createEReference(runtimeStepEClass, RUNTIME_STEP__SUB_STEPS);
@@ -597,6 +642,7 @@ public class SimplePackageImpl extends EPackageImpl implements SimplePackage {
 		createEReference(runtimeStepEClass, RUNTIME_STEP__SEMANTIC_RULE_STATIC_TARGET);
 		createEReference(runtimeStepEClass, RUNTIME_STEP__SEMANTIC_RULE_PARAMETERS);
 		createEReference(runtimeStepEClass, RUNTIME_STEP__SEMANTIC_RULE_RESULT);
+		createEAttribute(runtimeStepEClass, RUNTIME_STEP__NUMBER);
 
 		runtimeValueEClass = createEClass(RUNTIME_VALUE);
 
@@ -632,6 +678,9 @@ public class SimplePackageImpl extends EPackageImpl implements SimplePackage {
 		runtimeObjectValueBindingEClass = createEClass(RUNTIME_OBJECT_VALUE_BINDING);
 		createEReference(runtimeObjectValueBindingEClass, RUNTIME_OBJECT_VALUE_BINDING__FEATURE);
 		createEReference(runtimeObjectValueBindingEClass, RUNTIME_OBJECT_VALUE_BINDING__RUNTIME_VALUE);
+
+		runtimeCollectionEClass = createEClass(RUNTIME_COLLECTION);
+		createEReference(runtimeCollectionEClass, RUNTIME_COLLECTION__CONTENTS);
 	}
 
 	/**
@@ -672,6 +721,7 @@ public class SimplePackageImpl extends EPackageImpl implements SimplePackage {
 		runtimeStringValueEClass.getESuperTypes().add(this.getRuntimeValue());
 		runtimeContainmentValueEClass.getESuperTypes().add(this.getRuntimeValue());
 		runtimeNullValueEClass.getESuperTypes().add(this.getRuntimeValue());
+		runtimeCollectionEClass.getESuperTypes().add(this.getRuntimeValue());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(simpleTraceEClass, SimpleTrace.class, "SimpleTrace", !IS_ABSTRACT, !IS_INTERFACE,
@@ -697,6 +747,8 @@ public class SimplePackageImpl extends EPackageImpl implements SimplePackage {
 		initEReference(getRuntimeState_EndingSteps(), this.getRuntimeStep(), this.getRuntimeStep_TargetState(),
 				"endingSteps", null, 0, -1, RuntimeState.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRuntimeState_Number(), theEcorePackage.getEInt(), "number", null, 0, 1, RuntimeState.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(runtimeStepEClass, RuntimeStep.class, "RuntimeStep", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -721,6 +773,8 @@ public class SimplePackageImpl extends EPackageImpl implements SimplePackage {
 		initEReference(getRuntimeStep_SemanticRuleResult(), this.getRuntimeValue(), null, "semanticRuleResult", null, 0,
 				1, RuntimeStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRuntimeStep_Number(), theEcorePackage.getEInt(), "number", null, 0, 1, RuntimeStep.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(runtimeValueEClass, RuntimeValue.class, "RuntimeValue", IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -790,6 +844,12 @@ public class SimplePackageImpl extends EPackageImpl implements SimplePackage {
 		initEReference(getRuntimeObjectValueBinding_RuntimeValue(), this.getRuntimeValue(), null, "runtimeValue", null,
 				1, 1, RuntimeObjectValueBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
 				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(runtimeCollectionEClass, RuntimeCollection.class, "RuntimeCollection", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getRuntimeCollection_Contents(), this.getRuntimeValue(), null, "contents", null, 0, -1,
+				RuntimeCollection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

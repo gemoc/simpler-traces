@@ -139,6 +139,15 @@ public interface SimpleFactory extends EFactory {
 	RuntimeObjectValueBinding createRuntimeObjectValueBinding();
 
 	/**
+	 * Returns a new object of class '<em>Runtime Collection</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Runtime Collection</em>'.
+	 * @generated
+	 */
+	RuntimeCollection createRuntimeCollection();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

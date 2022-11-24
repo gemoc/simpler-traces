@@ -149,13 +149,22 @@ public interface SimplePackage extends EPackage {
 	int RUNTIME_STATE__ENDING_STEPS = 2;
 
 	/**
+	 * The feature id for the '<em><b>Number</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_STATE__NUMBER = 3;
+
+	/**
 	 * The number of structural features of the '<em>Runtime State</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RUNTIME_STATE_FEATURE_COUNT = 3;
+	int RUNTIME_STATE_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Runtime State</em>' class.
@@ -240,13 +249,22 @@ public interface SimplePackage extends EPackage {
 	int RUNTIME_STEP__SEMANTIC_RULE_RESULT = 6;
 
 	/**
+	 * The feature id for the '<em><b>Number</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_STEP__NUMBER = 7;
+
+	/**
 	 * The number of structural features of the '<em>Runtime Step</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RUNTIME_STEP_FEATURE_COUNT = 7;
+	int RUNTIME_STEP_FEATURE_COUNT = 8;
 
 	/**
 	 * The number of operations of the '<em>Runtime Step</em>' class.
@@ -674,6 +692,43 @@ public interface SimplePackage extends EPackage {
 	int RUNTIME_OBJECT_VALUE_BINDING_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link org.eclipse.gemoc.trace.simple.impl.RuntimeCollectionImpl <em>Runtime Collection</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.gemoc.trace.simple.impl.RuntimeCollectionImpl
+	 * @see org.eclipse.gemoc.trace.simple.impl.SimplePackageImpl#getRuntimeCollection()
+	 * @generated
+	 */
+	int RUNTIME_COLLECTION = 14;
+
+	/**
+	 * The feature id for the '<em><b>Contents</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_COLLECTION__CONTENTS = RUNTIME_VALUE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Runtime Collection</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_COLLECTION_FEATURE_COUNT = RUNTIME_VALUE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Runtime Collection</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_COLLECTION_OPERATION_COUNT = RUNTIME_VALUE_OPERATION_COUNT + 0;
+
+	/**
 	 * Returns the meta object for class '{@link org.eclipse.gemoc.trace.simple.SimpleTrace <em>Trace</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -758,6 +813,17 @@ public interface SimplePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getRuntimeState_EndingSteps();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.gemoc.trace.simple.RuntimeState#getNumber <em>Number</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Number</em>'.
+	 * @see org.eclipse.gemoc.trace.simple.RuntimeState#getNumber()
+	 * @see #getRuntimeState()
+	 * @generated
+	 */
+	EAttribute getRuntimeState_Number();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.gemoc.trace.simple.RuntimeStep <em>Runtime Step</em>}'.
@@ -845,6 +911,17 @@ public interface SimplePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getRuntimeStep_SemanticRuleResult();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.gemoc.trace.simple.RuntimeStep#getNumber <em>Number</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Number</em>'.
+	 * @see org.eclipse.gemoc.trace.simple.RuntimeStep#getNumber()
+	 * @see #getRuntimeStep()
+	 * @generated
+	 */
+	EAttribute getRuntimeStep_Number();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.gemoc.trace.simple.RuntimeValue <em>Runtime Value</em>}'.
@@ -1089,6 +1166,27 @@ public interface SimplePackage extends EPackage {
 	EReference getRuntimeObjectValueBinding_RuntimeValue();
 
 	/**
+	 * Returns the meta object for class '{@link org.eclipse.gemoc.trace.simple.RuntimeCollection <em>Runtime Collection</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Runtime Collection</em>'.
+	 * @see org.eclipse.gemoc.trace.simple.RuntimeCollection
+	 * @generated
+	 */
+	EClass getRuntimeCollection();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.eclipse.gemoc.trace.simple.RuntimeCollection#getContents <em>Contents</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Contents</em>'.
+	 * @see org.eclipse.gemoc.trace.simple.RuntimeCollection#getContents()
+	 * @see #getRuntimeCollection()
+	 * @generated
+	 */
+	EReference getRuntimeCollection_Contents();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1180,6 +1278,14 @@ public interface SimplePackage extends EPackage {
 		EReference RUNTIME_STATE__ENDING_STEPS = eINSTANCE.getRuntimeState_EndingSteps();
 
 		/**
+		 * The meta object literal for the '<em><b>Number</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute RUNTIME_STATE__NUMBER = eINSTANCE.getRuntimeState_Number();
+
+		/**
 		 * The meta object literal for the '{@link org.eclipse.gemoc.trace.simple.impl.RuntimeStepImpl <em>Runtime Step</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1244,6 +1350,14 @@ public interface SimplePackage extends EPackage {
 		 * @generated
 		 */
 		EReference RUNTIME_STEP__SEMANTIC_RULE_RESULT = eINSTANCE.getRuntimeStep_SemanticRuleResult();
+
+		/**
+		 * The meta object literal for the '<em><b>Number</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute RUNTIME_STEP__NUMBER = eINSTANCE.getRuntimeStep_Number();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.gemoc.trace.simple.impl.RuntimeValueImpl <em>Runtime Value</em>}' class.
@@ -1452,6 +1566,24 @@ public interface SimplePackage extends EPackage {
 		 * @generated
 		 */
 		EReference RUNTIME_OBJECT_VALUE_BINDING__RUNTIME_VALUE = eINSTANCE.getRuntimeObjectValueBinding_RuntimeValue();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.gemoc.trace.simple.impl.RuntimeCollectionImpl <em>Runtime Collection</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.gemoc.trace.simple.impl.RuntimeCollectionImpl
+		 * @see org.eclipse.gemoc.trace.simple.impl.SimplePackageImpl#getRuntimeCollection()
+		 * @generated
+		 */
+		EClass RUNTIME_COLLECTION = eINSTANCE.getRuntimeCollection();
+
+		/**
+		 * The meta object literal for the '<em><b>Contents</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RUNTIME_COLLECTION__CONTENTS = eINSTANCE.getRuntimeCollection_Contents();
 
 	}
 

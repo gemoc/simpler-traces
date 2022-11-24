@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.eclipse.gemoc.trace.simple.RuntimeStep#getSemanticRuleStaticTarget <em>Semantic Rule Static Target</em>}</li>
  *   <li>{@link org.eclipse.gemoc.trace.simple.RuntimeStep#getSemanticRuleParameters <em>Semantic Rule Parameters</em>}</li>
  *   <li>{@link org.eclipse.gemoc.trace.simple.RuntimeStep#getSemanticRuleResult <em>Semantic Rule Result</em>}</li>
+ *   <li>{@link org.eclipse.gemoc.trace.simple.RuntimeStep#getNumber <em>Number</em>}</li>
  * </ul>
  *
  * @see org.eclipse.gemoc.trace.simple.SimplePackage#getRuntimeStep()
@@ -166,5 +167,27 @@ public interface RuntimeStep extends EObject {
 	 * @generated
 	 */
 	void setSemanticRuleResult(RuntimeValue value);
+
+	/**
+	 * Returns the value of the '<em><b>Number</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Number</em>' attribute.
+	 * @see #setNumber(int)
+	 * @see org.eclipse.gemoc.trace.simple.SimplePackage#getRuntimeStep_Number()
+	 * @model
+	 * @generated
+	 */
+	int getNumber();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.gemoc.trace.simple.RuntimeStep#getNumber <em>Number</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Number</em>' attribute.
+	 * @see #getNumber()
+	 * @generated
+	 */
+	void setNumber(int value);
 
 } // RuntimeStep

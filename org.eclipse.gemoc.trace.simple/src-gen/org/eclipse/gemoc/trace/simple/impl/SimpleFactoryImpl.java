@@ -82,6 +82,8 @@ public class SimpleFactoryImpl extends EFactoryImpl implements SimpleFactory {
 			return createRuntimeNullValue();
 		case SimplePackage.RUNTIME_OBJECT_VALUE_BINDING:
 			return createRuntimeObjectValueBinding();
+		case SimplePackage.RUNTIME_COLLECTION:
+			return createRuntimeCollection();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -215,6 +217,16 @@ public class SimpleFactoryImpl extends EFactoryImpl implements SimpleFactory {
 	public RuntimeObjectValueBinding createRuntimeObjectValueBinding() {
 		RuntimeObjectValueBindingImpl runtimeObjectValueBinding = new RuntimeObjectValueBindingImpl();
 		return runtimeObjectValueBinding;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RuntimeCollection createRuntimeCollection() {
+		RuntimeCollectionImpl runtimeCollection = new RuntimeCollectionImpl();
+		return runtimeCollection;
 	}
 
 	/**

@@ -39,6 +39,7 @@ import org.eclipse.gemoc.trace.simple.SimplePackage;
  *   <li>{@link org.eclipse.gemoc.trace.simple.impl.RuntimeStepImpl#getSemanticRuleStaticTarget <em>Semantic Rule Static Target</em>}</li>
  *   <li>{@link org.eclipse.gemoc.trace.simple.impl.RuntimeStepImpl#getSemanticRuleParameters <em>Semantic Rule Parameters</em>}</li>
  *   <li>{@link org.eclipse.gemoc.trace.simple.impl.RuntimeStepImpl#getSemanticRuleResult <em>Semantic Rule Result</em>}</li>
+ *   <li>{@link org.eclipse.gemoc.trace.simple.impl.RuntimeStepImpl#getNumber <em>Number</em>}</li>
  * </ul>
  *
  * @generated
@@ -123,6 +124,26 @@ public class RuntimeStepImpl extends MinimalEObjectImpl.Container implements Run
 	 * @ordered
 	 */
 	protected RuntimeValue semanticRuleResult;
+
+	/**
+	 * The default value of the '{@link #getNumber() <em>Number</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNumber()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int NUMBER_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getNumber() <em>Number</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNumber()
+	 * @generated
+	 * @ordered
+	 */
+	protected int number = NUMBER_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -424,6 +445,28 @@ public class RuntimeStepImpl extends MinimalEObjectImpl.Container implements Run
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public int getNumber() {
+		return number;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setNumber(int newNumber) {
+		int oldNumber = number;
+		number = newNumber;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SimplePackage.RUNTIME_STEP__NUMBER, oldNumber,
+					number));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -491,6 +534,8 @@ public class RuntimeStepImpl extends MinimalEObjectImpl.Container implements Run
 			return getSemanticRuleParameters();
 		case SimplePackage.RUNTIME_STEP__SEMANTIC_RULE_RESULT:
 			return getSemanticRuleResult();
+		case SimplePackage.RUNTIME_STEP__NUMBER:
+			return getNumber();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -527,6 +572,9 @@ public class RuntimeStepImpl extends MinimalEObjectImpl.Container implements Run
 		case SimplePackage.RUNTIME_STEP__SEMANTIC_RULE_RESULT:
 			setSemanticRuleResult((RuntimeValue) newValue);
 			return;
+		case SimplePackage.RUNTIME_STEP__NUMBER:
+			setNumber((Integer) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -560,6 +608,9 @@ public class RuntimeStepImpl extends MinimalEObjectImpl.Container implements Run
 		case SimplePackage.RUNTIME_STEP__SEMANTIC_RULE_RESULT:
 			setSemanticRuleResult((RuntimeValue) null);
 			return;
+		case SimplePackage.RUNTIME_STEP__NUMBER:
+			setNumber(NUMBER_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -587,6 +638,8 @@ public class RuntimeStepImpl extends MinimalEObjectImpl.Container implements Run
 			return semanticRuleParameters != null && !semanticRuleParameters.isEmpty();
 		case SimplePackage.RUNTIME_STEP__SEMANTIC_RULE_RESULT:
 			return semanticRuleResult != null;
+		case SimplePackage.RUNTIME_STEP__NUMBER:
+			return number != NUMBER_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -604,6 +657,8 @@ public class RuntimeStepImpl extends MinimalEObjectImpl.Container implements Run
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (semanticRuleName: ");
 		result.append(semanticRuleName);
+		result.append(", number: ");
+		result.append(number);
 		result.append(')');
 		return result.toString();
 	}

@@ -20,6 +20,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference simple.ecore#//RuntimeState/runtimeExtensions"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference simple.ecore#//RuntimeState/startingSteps"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference simple.ecore#//RuntimeState/endingSteps"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute simple.ecore#//RuntimeState/number"/>
     </genClasses>
     <genClasses ecoreClass="simple.ecore#//RuntimeStep">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference simple.ecore#//RuntimeStep/subSteps"/>
@@ -29,6 +30,7 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference simple.ecore#//RuntimeStep/semanticRuleStaticTarget"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference simple.ecore#//RuntimeStep/semanticRuleParameters"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference simple.ecore#//RuntimeStep/semanticRuleResult"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute simple.ecore#//RuntimeStep/number"/>
     </genClasses>
     <genClasses ecoreClass="simple.ecore#//RuntimeValue"/>
     <genClasses ecoreClass="simple.ecore#//RuntimeIntegerValue">
@@ -61,6 +63,9 @@
     <genClasses ecoreClass="simple.ecore#//RuntimeObjectValueBinding">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference simple.ecore#//RuntimeObjectValueBinding/feature"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference simple.ecore#//RuntimeObjectValueBinding/runtimeValue"/>
+    </genClasses>
+    <genClasses ecoreClass="simple.ecore#//RuntimeCollection">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference simple.ecore#//RuntimeCollection/contents"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

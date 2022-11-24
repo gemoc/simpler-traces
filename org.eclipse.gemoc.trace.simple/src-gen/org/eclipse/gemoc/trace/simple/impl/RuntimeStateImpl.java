@@ -4,6 +4,7 @@ package org.eclipse.gemoc.trace.simple.impl;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -11,6 +12,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
@@ -33,6 +35,7 @@ import org.eclipse.gemoc.trace.simple.SimplePackage;
  *   <li>{@link org.eclipse.gemoc.trace.simple.impl.RuntimeStateImpl#getRuntimeExtensions <em>Runtime Extensions</em>}</li>
  *   <li>{@link org.eclipse.gemoc.trace.simple.impl.RuntimeStateImpl#getStartingSteps <em>Starting Steps</em>}</li>
  *   <li>{@link org.eclipse.gemoc.trace.simple.impl.RuntimeStateImpl#getEndingSteps <em>Ending Steps</em>}</li>
+ *   <li>{@link org.eclipse.gemoc.trace.simple.impl.RuntimeStateImpl#getNumber <em>Number</em>}</li>
  * </ul>
  *
  * @generated
@@ -67,6 +70,26 @@ public class RuntimeStateImpl extends MinimalEObjectImpl.Container implements Ru
 	 * @ordered
 	 */
 	protected EList<RuntimeStep> endingSteps;
+
+	/**
+	 * The default value of the '{@link #getNumber() <em>Number</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNumber()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int NUMBER_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getNumber() <em>Number</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNumber()
+	 * @generated
+	 * @ordered
+	 */
+	protected int number = NUMBER_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -131,6 +154,28 @@ public class RuntimeStateImpl extends MinimalEObjectImpl.Container implements Ru
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public int getNumber() {
+		return number;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setNumber(int newNumber) {
+		int oldNumber = number;
+		number = newNumber;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SimplePackage.RUNTIME_STATE__NUMBER, oldNumber,
+					number));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -175,6 +220,8 @@ public class RuntimeStateImpl extends MinimalEObjectImpl.Container implements Ru
 			return getStartingSteps();
 		case SimplePackage.RUNTIME_STATE__ENDING_STEPS:
 			return getEndingSteps();
+		case SimplePackage.RUNTIME_STATE__NUMBER:
+			return getNumber();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -200,6 +247,9 @@ public class RuntimeStateImpl extends MinimalEObjectImpl.Container implements Ru
 			getEndingSteps().clear();
 			getEndingSteps().addAll((Collection<? extends RuntimeStep>) newValue);
 			return;
+		case SimplePackage.RUNTIME_STATE__NUMBER:
+			setNumber((Integer) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -221,6 +271,9 @@ public class RuntimeStateImpl extends MinimalEObjectImpl.Container implements Ru
 		case SimplePackage.RUNTIME_STATE__ENDING_STEPS:
 			getEndingSteps().clear();
 			return;
+		case SimplePackage.RUNTIME_STATE__NUMBER:
+			setNumber(NUMBER_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -239,8 +292,27 @@ public class RuntimeStateImpl extends MinimalEObjectImpl.Container implements Ru
 			return startingSteps != null && !startingSteps.isEmpty();
 		case SimplePackage.RUNTIME_STATE__ENDING_STEPS:
 			return endingSteps != null && !endingSteps.isEmpty();
+		case SimplePackage.RUNTIME_STATE__NUMBER:
+			return number != NUMBER_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy())
+			return super.toString();
+
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (number: ");
+		result.append(number);
+		result.append(')');
+		return result.toString();
 	}
 
 } //RuntimeStateImpl

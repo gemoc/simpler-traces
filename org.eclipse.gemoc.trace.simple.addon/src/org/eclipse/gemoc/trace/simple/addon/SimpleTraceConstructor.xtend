@@ -32,6 +32,7 @@ import org.eclipse.gemoc.trace.simple.RuntimeValue
 import org.eclipse.gemoc.trace.simple.SimpleFactory
 import org.eclipse.gemoc.trace.simple.SimpleTrace
 import org.eclipse.gemoc.xdsmlframework.api.engine_addon.modelchangelistener.ModelChange
+import java.util.Collection
 
 class SimpleTraceConstructor {
 	SimpleTrace traceRoot
@@ -41,6 +42,8 @@ class SimpleTraceConstructor {
 	RuntimeState lastState
 	IDynamicPartAccessor dynamicPartAccessor = new DefaultDynamicPartAccessor
 	SimpleFactory factory = SimpleFactory.eINSTANCE
+	var stateCounter = 0
+	var stepCounter = 0
 
 	Map<EObject, RuntimeOnlyElement> exe2trace = new HashMap
 
@@ -58,19 +61,21 @@ class SimpleTraceConstructor {
 		return allResources
 	}
 
-	def addAllRuntimeExtensions(RuntimeState state) {
+	def createState() {
 		var Set<Resource> allResources = getAllExecutedModelResources()
-		lastState = SimpleFactory.eINSTANCE.createRuntimeState()
+		val state = SimpleFactory.eINSTANCE.createRuntimeState()
+		state.number = stateCounter++
 		for (Resource r : allResources) {
 			for (var TreeIterator<EObject> i = r.getAllContents(); i.hasNext();) {
 				val EObject o = i.next()
 
 				// We only look at *static* objects (that may contain runtime extensions)
 				if (!SimpleDynamicAnnotationHelper.isDynamic(o.eClass)) {
-					addRuntimeExtensions(o, lastState)
+					addRuntimeExtensions(o, state)
 				}
 			}
 		}
+		return state
 	}
 
 	def addRuntimeExtensions(EObject object, RuntimeState state) {
@@ -120,7 +125,6 @@ class SimpleTraceConstructor {
 						// Browse all copied objects, and add them as RuntimeObjects (or update existing RuntimeObjects)
 						for (exeObject : copier.keySet()) {
 							val copiedObject = copier.get(exeObject)
-
 							val traceObject = createOrGetRuntimeObjectOf(exeObject)
 							val version = factory.createRuntimeOnlyElementVersion
 							version.runtimeState = state
@@ -143,7 +147,7 @@ class SimpleTraceConstructor {
 				binding.feature = field.mutableProperty
 				binding.runtimeValue = runtimeValue
 				runtimeExtension.runtimeBindings.add(binding)
-				lastState.runtimeExtensions.add(runtimeExtension)
+				state.runtimeExtensions.add(runtimeExtension)
 			}
 
 		}
@@ -151,15 +155,15 @@ class SimpleTraceConstructor {
 	}
 
 	def void addState(List<ModelChange> modelChanges) {
-		if (lastState === null || !modelChanges.isEmpty()) {
-			lastState = SimpleFactory.eINSTANCE.createRuntimeState()
-			addAllRuntimeExtensions(lastState)
+		if (this.lastState === null || !modelChanges.isEmpty()) {
+			this.lastState = createState()
 			this.traceRoot.getStates().add(lastState)
 		}
 	}
 
 	def void addStep(Step<?> step) {
 		val newStep = factory.createRuntimeStep
+		newStep.number = stepCounter++
 		newStep.semanticRuleName = step.mseoccurrence.mse.name
 		newStep.semanticRuleStaticTarget = step.mseoccurrence.mse.caller
 
@@ -196,17 +200,23 @@ class SimpleTraceConstructor {
 			}
 			reference
 		} else if (object instanceof Integer) {
-			val reference = factory.createRuntimeIntegerValue
-			reference.value = object
-			reference
+			val intValue = factory.createRuntimeIntegerValue
+			intValue.value = object
+			intValue
 		} else if (object instanceof Boolean) {
-			val reference = factory.createRuntimeBooleanValue
-			reference.value = object
-			reference
+			val boolValue = factory.createRuntimeBooleanValue
+			boolValue.value = object
+			boolValue
 		} else if (object instanceof String) {
-			val reference = factory.createRuntimeStringValue
-			reference.value = object
-			reference
+			val stringValue = factory.createRuntimeStringValue
+			stringValue.value = object
+			stringValue
+		} else if (object instanceof Collection) {
+			val collection = factory.createRuntimeCollection
+			for (Object content : object) {
+				collection.contents.add(javaObjectToRuntimeValue(content))
+			}
+			collection
 		} else {
 			throw new Exception("Cannot store this value in the simple trace: " + object)
 		}
