@@ -13,7 +13,9 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.eclipse.gemoc.trace.simple.RuntimeBooleanValue;
 import org.eclipse.gemoc.trace.simple.RuntimeCollection;
 import org.eclipse.gemoc.trace.simple.RuntimeContainmentValue;
+import org.eclipse.gemoc.trace.simple.RuntimeDoubleValue;
 import org.eclipse.gemoc.trace.simple.RuntimeExtensionOfStaticElement;
+import org.eclipse.gemoc.trace.simple.RuntimeFloatValue;
 import org.eclipse.gemoc.trace.simple.RuntimeIntegerValue;
 import org.eclipse.gemoc.trace.simple.RuntimeNullValue;
 import org.eclipse.gemoc.trace.simple.RuntimeObjectValueBinding;
@@ -139,6 +141,20 @@ public class SimplePackageImpl extends EPackageImpl implements SimplePackage {
 	 * @generated
 	 */
 	private EClass runtimeCollectionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass runtimeDoubleValueEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass runtimeFloatValueEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -599,6 +615,42 @@ public class SimplePackageImpl extends EPackageImpl implements SimplePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getRuntimeDoubleValue() {
+		return runtimeDoubleValueEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getRuntimeDoubleValue_Value() {
+		return (EAttribute) runtimeDoubleValueEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getRuntimeFloatValue() {
+		return runtimeFloatValueEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getRuntimeFloatValue_Value() {
+		return (EAttribute) runtimeFloatValueEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public SimpleFactory getSimpleFactory() {
 		return (SimpleFactory) getEFactoryInstance();
 	}
@@ -681,6 +733,12 @@ public class SimplePackageImpl extends EPackageImpl implements SimplePackage {
 
 		runtimeCollectionEClass = createEClass(RUNTIME_COLLECTION);
 		createEReference(runtimeCollectionEClass, RUNTIME_COLLECTION__CONTENTS);
+
+		runtimeDoubleValueEClass = createEClass(RUNTIME_DOUBLE_VALUE);
+		createEAttribute(runtimeDoubleValueEClass, RUNTIME_DOUBLE_VALUE__VALUE);
+
+		runtimeFloatValueEClass = createEClass(RUNTIME_FLOAT_VALUE);
+		createEAttribute(runtimeFloatValueEClass, RUNTIME_FLOAT_VALUE__VALUE);
 	}
 
 	/**
@@ -722,6 +780,8 @@ public class SimplePackageImpl extends EPackageImpl implements SimplePackage {
 		runtimeContainmentValueEClass.getESuperTypes().add(this.getRuntimeValue());
 		runtimeNullValueEClass.getESuperTypes().add(this.getRuntimeValue());
 		runtimeCollectionEClass.getESuperTypes().add(this.getRuntimeValue());
+		runtimeDoubleValueEClass.getESuperTypes().add(this.getRuntimeValue());
+		runtimeFloatValueEClass.getESuperTypes().add(this.getRuntimeValue());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(simpleTraceEClass, SimpleTrace.class, "SimpleTrace", !IS_ABSTRACT, !IS_INTERFACE,
@@ -850,6 +910,18 @@ public class SimplePackageImpl extends EPackageImpl implements SimplePackage {
 		initEReference(getRuntimeCollection_Contents(), this.getRuntimeValue(), null, "contents", null, 0, -1,
 				RuntimeCollection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(runtimeDoubleValueEClass, RuntimeDoubleValue.class, "RuntimeDoubleValue", !IS_ABSTRACT,
+				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getRuntimeDoubleValue_Value(), theEcorePackage.getEDouble(), "value", null, 1, 1,
+				RuntimeDoubleValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+
+		initEClass(runtimeFloatValueEClass, RuntimeFloatValue.class, "RuntimeFloatValue", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getRuntimeFloatValue_Value(), theEcorePackage.getEDouble(), "value", null, 1, 1,
+				RuntimeFloatValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

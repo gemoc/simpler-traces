@@ -217,6 +217,14 @@ class SimpleTraceConstructor {
 				collection.contents.add(javaObjectToRuntimeValue(content))
 			}
 			collection
+		} else if (object instanceof Float) {
+			val floatValue = factory.createRuntimeFloatValue
+			floatValue.value = object
+			floatValue
+		} else if (object instanceof Double) {
+			val doubleValue = factory.createRuntimeDoubleValue
+			doubleValue.value = object
+			doubleValue
 		} else {
 			throw new Exception("Cannot store this value in the simple trace: " + object)
 		}

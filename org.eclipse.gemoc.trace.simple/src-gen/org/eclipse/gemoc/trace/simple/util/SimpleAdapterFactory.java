@@ -142,6 +142,16 @@ public class SimpleAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseRuntimeDoubleValue(RuntimeDoubleValue object) {
+			return createRuntimeDoubleValueAdapter();
+		}
+
+		@Override
+		public Adapter caseRuntimeFloatValue(RuntimeFloatValue object) {
+			return createRuntimeFloatValueAdapter();
+		}
+
+		@Override
 		public Adapter defaultCase(EObject object) {
 			return createEObjectAdapter();
 		}
@@ -367,6 +377,34 @@ public class SimpleAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createRuntimeCollectionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.gemoc.trace.simple.RuntimeDoubleValue <em>Runtime Double Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.gemoc.trace.simple.RuntimeDoubleValue
+	 * @generated
+	 */
+	public Adapter createRuntimeDoubleValueAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.gemoc.trace.simple.RuntimeFloatValue <em>Runtime Float Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.gemoc.trace.simple.RuntimeFloatValue
+	 * @generated
+	 */
+	public Adapter createRuntimeFloatValueAdapter() {
 		return null;
 	}
 

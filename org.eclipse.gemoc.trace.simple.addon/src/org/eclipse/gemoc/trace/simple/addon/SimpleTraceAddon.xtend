@@ -1,11 +1,17 @@
 package org.eclipse.gemoc.trace.simple.addon
 
+import java.time.Duration
+import java.time.Instant
+import java.util.Collections
+import java.util.HashMap
 import java.util.HashSet
+import java.util.Map
 import java.util.Set
 import org.eclipse.emf.common.util.URI
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.emf.ecore.resource.ResourceSet
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl
+import org.eclipse.emf.ecore.xmi.XMLResource
 import org.eclipse.emf.transaction.RecordingCommand
 import org.eclipse.emf.transaction.util.TransactionUtil
 import org.eclipse.gemoc.commons.eclipse.emf.EMFResource
@@ -16,10 +22,6 @@ import org.eclipse.gemoc.xdsmlframework.api.core.IExecutionContext
 import org.eclipse.gemoc.xdsmlframework.api.core.IExecutionEngine
 import org.eclipse.gemoc.xdsmlframework.api.engine_addon.IEngineAddon
 import org.eclipse.gemoc.xdsmlframework.api.engine_addon.modelchangelistener.BatchModelChangeListener
-import java.util.HashMap
-import org.eclipse.emf.ecore.xmi.XMLResource
-import java.util.Map
-import java.util.Collections
 
 class SimpleTraceAddon implements IEngineAddon {
 
@@ -35,6 +37,9 @@ class SimpleTraceAddon implements IEngineAddon {
 	protected boolean activateSaveAsBinaryResource = true;
 	
 	Map<Object,Object> saveOptions
+	
+	Instant start
+	Instant finish
 
 	override aboutToExecuteStep(IExecutionEngine<?> executionEngine, Step<?> step) {
 		manageStep(step, true)
@@ -64,6 +69,7 @@ class SimpleTraceAddon implements IEngineAddon {
 	 * To construct the trace manager
 	 */
 	override engineAboutToStart(IExecutionEngine<?> engine) {
+		start = Instant.now()
 		if (_executionContext === null) {
 			_executionContext = engine.executionContext
 
@@ -115,6 +121,8 @@ class SimpleTraceAddon implements IEngineAddon {
 		if (activateSaveOnEngineStop) {
 			traceConstructor.save(saveOptions)
 		}
+		finish = Instant.now()
+		println("==> Overall execution time : "+ Duration.between(start, finish).toSeconds + " sec.")
 	}
 
 	/**

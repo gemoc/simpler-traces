@@ -729,6 +729,80 @@ public interface SimplePackage extends EPackage {
 	int RUNTIME_COLLECTION_OPERATION_COUNT = RUNTIME_VALUE_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.eclipse.gemoc.trace.simple.impl.RuntimeDoubleValueImpl <em>Runtime Double Value</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.gemoc.trace.simple.impl.RuntimeDoubleValueImpl
+	 * @see org.eclipse.gemoc.trace.simple.impl.SimplePackageImpl#getRuntimeDoubleValue()
+	 * @generated
+	 */
+	int RUNTIME_DOUBLE_VALUE = 15;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_DOUBLE_VALUE__VALUE = RUNTIME_VALUE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Runtime Double Value</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_DOUBLE_VALUE_FEATURE_COUNT = RUNTIME_VALUE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Runtime Double Value</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_DOUBLE_VALUE_OPERATION_COUNT = RUNTIME_VALUE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.gemoc.trace.simple.impl.RuntimeFloatValueImpl <em>Runtime Float Value</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.gemoc.trace.simple.impl.RuntimeFloatValueImpl
+	 * @see org.eclipse.gemoc.trace.simple.impl.SimplePackageImpl#getRuntimeFloatValue()
+	 * @generated
+	 */
+	int RUNTIME_FLOAT_VALUE = 16;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_FLOAT_VALUE__VALUE = RUNTIME_VALUE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Runtime Float Value</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_FLOAT_VALUE_FEATURE_COUNT = RUNTIME_VALUE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Runtime Float Value</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_FLOAT_VALUE_OPERATION_COUNT = RUNTIME_VALUE_OPERATION_COUNT + 0;
+
+	/**
 	 * Returns the meta object for class '{@link org.eclipse.gemoc.trace.simple.SimpleTrace <em>Trace</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1187,6 +1261,48 @@ public interface SimplePackage extends EPackage {
 	EReference getRuntimeCollection_Contents();
 
 	/**
+	 * Returns the meta object for class '{@link org.eclipse.gemoc.trace.simple.RuntimeDoubleValue <em>Runtime Double Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Runtime Double Value</em>'.
+	 * @see org.eclipse.gemoc.trace.simple.RuntimeDoubleValue
+	 * @generated
+	 */
+	EClass getRuntimeDoubleValue();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.gemoc.trace.simple.RuntimeDoubleValue#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see org.eclipse.gemoc.trace.simple.RuntimeDoubleValue#getValue()
+	 * @see #getRuntimeDoubleValue()
+	 * @generated
+	 */
+	EAttribute getRuntimeDoubleValue_Value();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.gemoc.trace.simple.RuntimeFloatValue <em>Runtime Float Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Runtime Float Value</em>'.
+	 * @see org.eclipse.gemoc.trace.simple.RuntimeFloatValue
+	 * @generated
+	 */
+	EClass getRuntimeFloatValue();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.gemoc.trace.simple.RuntimeFloatValue#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see org.eclipse.gemoc.trace.simple.RuntimeFloatValue#getValue()
+	 * @see #getRuntimeFloatValue()
+	 * @generated
+	 */
+	EAttribute getRuntimeFloatValue_Value();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1584,6 +1700,42 @@ public interface SimplePackage extends EPackage {
 		 * @generated
 		 */
 		EReference RUNTIME_COLLECTION__CONTENTS = eINSTANCE.getRuntimeCollection_Contents();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.gemoc.trace.simple.impl.RuntimeDoubleValueImpl <em>Runtime Double Value</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.gemoc.trace.simple.impl.RuntimeDoubleValueImpl
+		 * @see org.eclipse.gemoc.trace.simple.impl.SimplePackageImpl#getRuntimeDoubleValue()
+		 * @generated
+		 */
+		EClass RUNTIME_DOUBLE_VALUE = eINSTANCE.getRuntimeDoubleValue();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute RUNTIME_DOUBLE_VALUE__VALUE = eINSTANCE.getRuntimeDoubleValue_Value();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.gemoc.trace.simple.impl.RuntimeFloatValueImpl <em>Runtime Float Value</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.gemoc.trace.simple.impl.RuntimeFloatValueImpl
+		 * @see org.eclipse.gemoc.trace.simple.impl.SimplePackageImpl#getRuntimeFloatValue()
+		 * @generated
+		 */
+		EClass RUNTIME_FLOAT_VALUE = eINSTANCE.getRuntimeFloatValue();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute RUNTIME_FLOAT_VALUE__VALUE = eINSTANCE.getRuntimeFloatValue_Value();
 
 	}
 
