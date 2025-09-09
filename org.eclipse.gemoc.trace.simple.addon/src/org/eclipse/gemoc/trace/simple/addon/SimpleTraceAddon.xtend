@@ -1,11 +1,17 @@
 package org.eclipse.gemoc.trace.simple.addon
 
+import java.time.Duration
+import java.time.Instant
+import java.util.Collections
+import java.util.HashMap
 import java.util.HashSet
+import java.util.Map
 import java.util.Set
 import org.eclipse.emf.common.util.URI
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.emf.ecore.resource.ResourceSet
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl
+import org.eclipse.emf.ecore.xmi.XMLResource
 import org.eclipse.emf.transaction.RecordingCommand
 import org.eclipse.emf.transaction.util.TransactionUtil
 import org.eclipse.gemoc.commons.eclipse.emf.EMFResource
@@ -28,6 +34,12 @@ class SimpleTraceAddon implements IEngineAddon {
 	protected boolean activateUpdateEquivalenceClasses = true;
 	protected boolean activateSaveOnEveryStep = true;
 	protected boolean activateSaveOnEngineStop = true;
+	protected boolean activateSaveAsBinaryResource = true;
+	
+	Map<Object,Object> saveOptions
+	
+	Instant start
+	Instant finish
 
 	override aboutToExecuteStep(IExecutionEngine<?> executionEngine, Step<?> step) {
 		manageStep(step, true)
@@ -48,7 +60,7 @@ class SimpleTraceAddon implements IEngineAddon {
 				}
 			])
 			if (activateSaveOnEveryStep) {
-				traceConstructor.save()
+				traceConstructor.save(saveOptions)
 			}
 		}
 	}
@@ -57,6 +69,7 @@ class SimpleTraceAddon implements IEngineAddon {
 	 * To construct the trace manager
 	 */
 	override engineAboutToStart(IExecutionEngine<?> engine) {
+		start = Instant.now()
 		if (_executionContext === null) {
 			_executionContext = engine.executionContext
 
@@ -65,6 +78,17 @@ class SimpleTraceAddon implements IEngineAddon {
 				"org.eclipse.gemoc.trace.simple.addon.saveTraceOnStep", false);
 			this.activateSaveOnEngineStop = _executionContext.runConfiguration.getAttribute(
 				"org.eclipse.gemoc.trace.simple.addon.saveTraceOnEngineStop", true);
+			this.activateSaveAsBinaryResource = _executionContext.runConfiguration.getAttribute(
+				"org.eclipse.gemoc.trace.simple.addon.saveTraceAsBinaryResource", false);
+			
+			this.saveOptions = new HashMap()
+			if (activateSaveAsBinaryResource){
+				this.saveOptions.put(XMLResource.OPTION_BINARY, Boolean.TRUE)	
+			}
+				
+			this.saveOptions = if (activateSaveAsBinaryResource) 
+       			newHashMap(XMLResource.OPTION_BINARY -> Boolean.TRUE) 
+       			else Collections.emptyMap()
 
 			val modelResource = _executionContext.resourceModel
 
@@ -95,10 +119,10 @@ class SimpleTraceAddon implements IEngineAddon {
 
 	override engineStopped(IExecutionEngine<?> engine) {
 		if (activateSaveOnEngineStop) {
-
-			traceConstructor.save()
-
+			traceConstructor.save(saveOptions)
 		}
+		finish = Instant.now()
+		println("==> Overall execution time : "+ Duration.between(start, finish).toSeconds + " sec.")
 	}
 
 	/**

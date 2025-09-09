@@ -148,6 +148,24 @@ public interface SimpleFactory extends EFactory {
 	RuntimeCollection createRuntimeCollection();
 
 	/**
+	 * Returns a new object of class '<em>Runtime Double Value</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Runtime Double Value</em>'.
+	 * @generated
+	 */
+	RuntimeDoubleValue createRuntimeDoubleValue();
+
+	/**
+	 * Returns a new object of class '<em>Runtime Float Value</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Runtime Float Value</em>'.
+	 * @generated
+	 */
+	RuntimeFloatValue createRuntimeFloatValue();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

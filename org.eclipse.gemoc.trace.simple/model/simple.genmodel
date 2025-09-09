@@ -67,5 +67,11 @@
     <genClasses ecoreClass="simple.ecore#//RuntimeCollection">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference simple.ecore#//RuntimeCollection/contents"/>
     </genClasses>
+    <genClasses ecoreClass="simple.ecore#//RuntimeDoubleValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute simple.ecore#//RuntimeDoubleValue/value"/>
+    </genClasses>
+    <genClasses ecoreClass="simple.ecore#//RuntimeFloatValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute simple.ecore#//RuntimeFloatValue/value"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

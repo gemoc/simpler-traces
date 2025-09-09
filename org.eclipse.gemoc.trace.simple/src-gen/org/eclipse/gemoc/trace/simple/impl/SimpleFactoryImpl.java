@@ -84,6 +84,10 @@ public class SimpleFactoryImpl extends EFactoryImpl implements SimpleFactory {
 			return createRuntimeObjectValueBinding();
 		case SimplePackage.RUNTIME_COLLECTION:
 			return createRuntimeCollection();
+		case SimplePackage.RUNTIME_DOUBLE_VALUE:
+			return createRuntimeDoubleValue();
+		case SimplePackage.RUNTIME_FLOAT_VALUE:
+			return createRuntimeFloatValue();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -227,6 +231,26 @@ public class SimpleFactoryImpl extends EFactoryImpl implements SimpleFactory {
 	public RuntimeCollection createRuntimeCollection() {
 		RuntimeCollectionImpl runtimeCollection = new RuntimeCollectionImpl();
 		return runtimeCollection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RuntimeDoubleValue createRuntimeDoubleValue() {
+		RuntimeDoubleValueImpl runtimeDoubleValue = new RuntimeDoubleValueImpl();
+		return runtimeDoubleValue;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RuntimeFloatValue createRuntimeFloatValue() {
+		RuntimeFloatValueImpl runtimeFloatValue = new RuntimeFloatValueImpl();
+		return runtimeFloatValue;
 	}
 
 	/**

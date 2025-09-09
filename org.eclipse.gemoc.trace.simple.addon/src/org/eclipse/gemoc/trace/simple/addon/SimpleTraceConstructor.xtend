@@ -217,6 +217,14 @@ class SimpleTraceConstructor {
 				collection.contents.add(javaObjectToRuntimeValue(content))
 			}
 			collection
+		} else if (object instanceof Float) {
+			val floatValue = factory.createRuntimeFloatValue
+			floatValue.value = object
+			floatValue
+		} else if (object instanceof Double) {
+			val doubleValue = factory.createRuntimeDoubleValue
+			doubleValue.value = object
+			doubleValue
 		} else {
 			throw new Exception("Cannot store this value in the simple trace: " + object)
 		}
@@ -236,20 +244,39 @@ class SimpleTraceConstructor {
 		traceResource.getContents().add(traceRoot)
 		return traceRoot
 	}
-
-	def void save() {
+	
+	/**
+	 * This method calls {@code save()} on the {@code traceResource} object, 
+	 * which is an implementation of {@link org.eclipse.emf.ecore.resource.Resource}, 
+	 * with the provided save options.
+	 *
+	 * @param saveOptions A map containing the save options to be passed to the {@code save()} method of the EMF resource.
+	 * 	 
+	 */
+	def void save(Map<?,?> saveOptions) {
 		try {
-			traceResource.save(null)
+			traceResource.save(saveOptions)
 		} catch (IOException e) {
 			e.printStackTrace()
 		}
 
 	}
-
-	def void save(URI uri) {
+	
+	/**
+	 * Sets a new URI for the EMF resource and saves it using the specified save options.
+	 *
+	 * This method updates the URI of {@code traceResource}, which is an implementation 
+	 * of {@link org.eclipse.emf.ecore.resource.Resource}, before calling {@code save()} 
+	 * with the given save options.
+	 *
+	 * @param uri        The URI under which the resource should be saved.
+	 * @param saveOptions A map containing the save options to be passed to 
+	 *                    the {@code save()} method of the EMF resource.
+	 */
+	def void save(URI uri, Map<?,?> saveOptions) {
 		try {
 			traceResource.setURI(uri)
-			traceResource.save(null)
+			traceResource.save(saveOptions)
 		} catch (IOException e) {
 			e.printStackTrace()
 		}

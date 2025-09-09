@@ -185,6 +185,24 @@ public class SimpleSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
+		case SimplePackage.RUNTIME_DOUBLE_VALUE: {
+			RuntimeDoubleValue runtimeDoubleValue = (RuntimeDoubleValue) theEObject;
+			T result = caseRuntimeDoubleValue(runtimeDoubleValue);
+			if (result == null)
+				result = caseRuntimeValue(runtimeDoubleValue);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case SimplePackage.RUNTIME_FLOAT_VALUE: {
+			RuntimeFloatValue runtimeFloatValue = (RuntimeFloatValue) theEObject;
+			T result = caseRuntimeFloatValue(runtimeFloatValue);
+			if (result == null)
+				result = caseRuntimeValue(runtimeFloatValue);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
 		default:
 			return defaultCase(theEObject);
 		}
@@ -412,6 +430,36 @@ public class SimpleSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseRuntimeCollection(RuntimeCollection object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Runtime Double Value</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Runtime Double Value</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRuntimeDoubleValue(RuntimeDoubleValue object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Runtime Float Value</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Runtime Float Value</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRuntimeFloatValue(RuntimeFloatValue object) {
 		return null;
 	}
 
